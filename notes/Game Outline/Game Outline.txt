@@ -1,0 +1,39 @@
+Basically it's Pong but has levels like Flash and every level has a goal
+Maybe we can make it Wario ware sort of stylised
+1-bit
+opportunity to work on game feel or something
+We can have little subtitles now
+Score a point
+Level 1 it's pong, score a point
+Squash
+Level 2 it's squash, hit the ball 5 times
+With gravitas
+Level 3 it's pong, but with gravity
+Seeing double
+Level 4 it's pong, but with two balls
+Portal 3
+Level 5 it's pong, but portals open and close meaning the ball teleports around
+gnoP
+Level 6 it's pong, but the controls are reversed
+Speedball
+Level 7 it's pong, but every hit makes the ball faster
+Attraction
+Level 8 it's pong, but there's a magnet moving up and down that disrupts the ball
+No AI
+Level 9 it's pong, but you control both paddles and have to survive
+Obstacle course
+Level 10 it's pong, but with a bunch of obstacles
+You are the ball
+Level 11 you are the ball
+Shrinkray
+Level 12 it's pong, but every time you hit the ball your paddle becomes smaller
+Hard to see
+Level 13 it's pong, but when you move your paddle fades away
+N Pongism
+Level 14 a thing spins around and randomly shoots balls and you have to defend your goal like N Ballism
+Magnets 2 
+Level 15 it's pong, but the paddles are repellant magnets instead of paddles
+Pong Volleyball
+Level 16 it's pong but slime volleyball
+Tradeoff
+Level 17 you can shoot balls as much as you'd like but that means there's more balls to deal with

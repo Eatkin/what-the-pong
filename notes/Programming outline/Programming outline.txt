@@ -1,0 +1,10 @@
+Paddle basic:
+It has collission
+The ball will bounce off it
+Paddle player:
+It's the same but it can be moved
+Can use bitmasks to determine properties
+
+Hitting the right side of the paddle causes the ball to just not do anything so maybe I fucked something up with the rebound angle
+Could it be, that I got something wrong?
+No, it is the laws of trigonometry that are wrong
