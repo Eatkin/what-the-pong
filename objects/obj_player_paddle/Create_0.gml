@@ -6,7 +6,7 @@ enum Input {
 	Right = vk_right,
 }
 
-enum Properties {
+enum PlayerProperties {
 	VerticalMovement,
 	Max
 }
@@ -28,7 +28,7 @@ properties = 0;
 // Set the properties based on the roomm
 switch (room)	{
 	case rm_level1:
-		apply_property(Properties.VerticalMovement);
+		apply_property(PlayerProperties.VerticalMovement);
 		break;
 }
 

@@ -1,6 +1,9 @@
+if (!global.in_play)	{
+	exit;
+}
 
 // Move up and down where possible
-if (check_property(Properties.VerticalMovement))	{
+if (check_property(PlayerProperties.VerticalMovement))	{
 	var vinput = keyboard_check(Input.Down) - keyboard_check(Input.Up);
 	var target_ys = vinput * maxspeed;
 	// Check if target_ys has changed because if it has we need to change our easing timer
