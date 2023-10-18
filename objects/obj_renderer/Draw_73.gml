@@ -15,7 +15,7 @@ if (!surface_exists(surf))
 	
 surface_set_target(surf);
 draw_set_colour(c_black);
-draw_rectangle(-extend_bounds, -extend_bounds, room_width + extend_bounds, room_height + extend_bounds, false);
+draw_rectangle(0, 0, room_width + extend_bounds * 2, room_height + extend_bounds * 2, false);
 
 gpu_set_blendmode(bm_subtract);
 var objs = [obj_ball, par_paddle];
@@ -24,4 +24,4 @@ gpu_set_blendmode(bm_normal);
 
 surface_reset_target();
 
-draw_surface(surf, -extend_bounds, -extend_bounds);
+draw_surface(surf, 0, 0);
