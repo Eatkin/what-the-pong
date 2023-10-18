@@ -15,6 +15,6 @@ Some stuff:
 	Some cool ass screen shake
 	Some sort of reset for the ball instead of just contuing eg in with gravitas
 	The with gravitas AI is hopeless, needs tweaking a bit more
-
-Oh let's also think about cool effects
-Because the level is very simple, I can draw a gradient, a black background over the top, then use bm_subtract to draw the paddle and ball to cut out the background
+	
+Cool colours isn't working properly
+Also I think the surface is slightly off

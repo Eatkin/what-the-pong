@@ -27,4 +27,4 @@ function hit_right()	{
 player_score = 0;
 opponent_score = 0;
 
-instance_create_layer(x, y, layer, obj_level_title);
+instance_create_layer(x, y, layer_get_id("UI"), obj_level_title);
