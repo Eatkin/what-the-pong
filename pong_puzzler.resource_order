@@ -26,6 +26,8 @@
     {"name":"obj_level_manager","order":1,"path":"objects/obj_level_manager/obj_level_manager.yy",},
     {"name":"rm_level2","order":2,"path":"rooms/rm_level2/rm_level2.yy",},
     {"name":"par_paddle","order":2,"path":"objects/par_paddle/par_paddle.yy",},
+    {"name":"obj_opponent_paddle","order":3,"path":"objects/obj_opponent_paddle/obj_opponent_paddle.yy",},
     {"name":"rm_level1","order":1,"path":"rooms/rm_level1/rm_level1.yy",},
+    {"name":"rm_level3","order":3,"path":"rooms/rm_level3/rm_level3.yy",},
   ],
 }

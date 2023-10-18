@@ -28,6 +28,13 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		break;
 	case rm_level2:
+		apply_property(BallProperties.NormalMovement);
+		var _dir = 10 + irandom(30)
+		_dir *= choose(1, -1)
+		xspeed = -dcos(_dir) * maxspeed;
+		yspeed = dsin(_dir) * maxspeed;
+		break;
+	case rm_level3:
 		apply_property(BallProperties.Gravity);
 		break;
 }

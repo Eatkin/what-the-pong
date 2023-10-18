@@ -4,9 +4,13 @@ if (!global.in_play)	{
 	exit;
 }
 
-// Save angle - collisions should be done with image_angle = 0
+// Save parameters and reset so collision checks work
 var angle = image_angle;
+var xs = image_xscale;
+var ys = image_yscale;
 image_angle = 0;
+image_xscale = 1;
+image_yscale = 1;
 
 // Basic pong movement
 if (check_property(BallProperties.NormalMovement))	{
@@ -38,6 +42,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		// Note to future Ed: cos(0) is NOT equal to cos(180)
 		xspeed = -sign(xspeed) * maxspeed * abs(dcos(rebound_angle));
 		yspeed = -dsin(rebound_angle) * maxspeed;
+		xs = 0.5;
 	}
 
 	// Collisions with top/bottom of paddle (it's basically the same as above but simpler)
@@ -52,6 +57,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		// We will not get stuck inside since that is accounted for in the x-movement
 		// Simple physics - just rebound against the paddle
 		yspeed *= -1;
+		ys = 0.5;
 	}
 
 	// Contact with room_boundaries
@@ -59,12 +65,23 @@ if (check_property(BallProperties.NormalMovement))	{
 	if (bbox_left < 0 or bbox_right > room_width)	{
 		xspeed *= -1;
 		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
+		xs = 0.5;
+		
+		// Trigger even with obj_level_manager
+		var xx = x;
+		with (obj_level_manager)	{
+			if (xx < room_width * 0.5)
+				hit_left();
+			else
+				hit_right();
+		}
 	}
 	// Rebound top/bottom
 	if (bbox_top < 0 or bbox_bottom > room_height)	{
 		yspeed *= -1;
 		rotation_dir *= -1;
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
+		ys = 0.5;
 	}
 }
 
@@ -87,6 +104,7 @@ if (check_property(BallProperties.Gravity))	{
 		}
 		// Now rebound
 		xspeed *= -1;
+		xs = 0.5;
 	}
 
 	// Now deal with collisions with top/bottom of paddle
@@ -101,6 +119,7 @@ if (check_property(BallProperties.Gravity))	{
 		// Now rebound
 		yspeed *= -1;
 		rotation_dir *= -1;
+		ys = 0.5;
 	}
 
 	// Contact with room_boundaries
@@ -108,6 +127,15 @@ if (check_property(BallProperties.Gravity))	{
 	if (bbox_left < 0 or bbox_right > room_width)	{
 		xspeed *= -1;
 		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
+		xs = 0.5;
+
+		var xx = x;
+		with (obj_level_manager)	{
+			if (xx < room_width * 0.5)
+				hit_left();
+			else
+				hit_right();
+		}
 	}
 	// Finally bounce against the floor
 	if (bbox_bottom > room_height)	{
@@ -116,8 +144,15 @@ if (check_property(BallProperties.Gravity))	{
 			y -= 1;
 		}
 		yspeed *= -1;
+		ys = 0.5;
 	}
 }
 
-// Restore angle
+// Restore parameters
 image_angle = angle;
+image_xscale = xs;
+image_yscale = ys;
+
+// Lerp xscale and yscale towards 1
+image_xscale = lerp(image_xscale, 1, 0.1);
+image_yscale = lerp(image_yscale, 1, 0.1);
