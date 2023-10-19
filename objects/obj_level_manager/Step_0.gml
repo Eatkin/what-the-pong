@@ -7,7 +7,7 @@ switch (room)	{
 			room_restart();
 		break;
 	case rm_level2:
-		if (player_score > 4)
+		if (player_score >= target_score)
 			room_goto_next()
 		if (opponent_score > 0)
 			room_restart();
@@ -20,9 +20,9 @@ switch (room)	{
 			room_restart();
 		break;
 	case rm_level5:
-		if (player_score > 10)
+		if (player_score > 20)
 			room_goto_next();
-		if (opponent_score > 10)
+		if (opponent_score > 20)
 			room_restart();
 		break;
 }
