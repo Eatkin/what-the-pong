@@ -40,8 +40,23 @@ if (check_property(EnemyProperties.VerticalMovement))	{
 
 		// Update position predictions if lag_timer is 0
 		if (lag_timer == 0)	{
-			x_pred = obj_ball.x + 2 * irandom(x_fuzz) - x_fuzz + obj_ball.xspeed * lag_timer_max * 0.5;
-			y_pred = obj_ball.y + 2 * irandom(y_fuzz) - y_fuzz + obj_ball.yspeed * lag_timer_max * 0.5;
+			// Find the nearest ball that is moving towards us otherwise just default to the nearest ball
+			var _ball = instance_nearest(x, y, obj_ball);
+			var _closest_dist = room_width;
+			// We find a ball, if it's moving towards us we measure the distance, if it's the closest seen update _ball
+			for (var i = 0; i < instance_number(obj_ball); i++)	{
+				var _inst = instance_find(obj_ball, i);
+				if (sign(_inst.xspeed) == sign(x - room_width * 0.5))	{
+					var _dist = abs(x - _inst.x);
+					if (_dist < _closest_dist)	{
+						_closest_dist = _dist;
+						_ball = _inst;
+					}
+				}
+			}
+			
+			x_pred = _ball.x + 2 * irandom(x_fuzz) - x_fuzz + _ball.xspeed * lag_timer_max * 0.5;
+			y_pred = _ball.y + 2 * irandom(y_fuzz) - y_fuzz + _ball.yspeed * lag_timer_max * 0.5;
 			// Clamp y_pred to it doesn't exceed room boundaries
 			y_pred = clamp(y_pred, sprite_height * 0.5, room_height - sprite_height * 0.5);
 			// How long the AI will wait before updating the ball's position

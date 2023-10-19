@@ -35,13 +35,29 @@ if (check_property(BallProperties.NormalMovement))	{
 		// Determine how much the offset from centre should affect balls angle
 		// I.e. if the offset is at maximum, it will add this angle onto the ball
 		// Same with speed
-		var offset_strength = 20;		
-		var movement_strength = 30;
-		var rebound_angle = (1 + sign(xspeed)) * 90 + offset_strength * offset + movement_strength * paddle_ys;
+		var offset_strength = 40;		
+		var movement_strength = 40;
+		var rebound_angle = 180 + offset_strength * offset + movement_strength * paddle_ys;
+		
+		// If xspeed is negative then we mirror the angle in the y-axis
+		if (sign(xspeed) == -1)
+			rebound_angle = 180 - rebound_angle;
+		
+		// What is our angle already? Xspeed will never be 0 (probably)
+		// Also that isn't a problem because darctan2 accounts for that
+		// We use negative because our rebound angle will be the opposite direction to this direction
+		var _dir = darctan2(yspeed, -xspeed);
+		
+		// Just take a simple average 
+		rebound_angle -= (rebound_angle - _dir) * 0.5;
+		
 		// Calculate our new speed components
 		// Note to future Ed: cos(0) is NOT equal to cos(180)
+		if (check_property(BallProperties.SpeedUp))	{
+			maxspeed *= 1.2;
+		}
 		xspeed = -sign(xspeed) * maxspeed * abs(dcos(rebound_angle));
-		yspeed = -dsin(rebound_angle) * maxspeed;
+		yspeed -= dsin(rebound_angle) * maxspeed;
 		xs = 0.5;
 	}
 

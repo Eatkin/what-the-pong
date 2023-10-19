@@ -1,6 +1,7 @@
 enum BallProperties {
 	NormalMovement,
 	Gravity,
+	SpeedUp,
 	Max
 }
 
@@ -24,9 +25,6 @@ grav = 0.5;
 properties = 0;
 
 switch (room)	{
-	case rm_level1:
-		apply_property(BallProperties.NormalMovement);
-		break;
 	case rm_level2:
 		apply_property(BallProperties.NormalMovement);
 		var _dir = 10 + irandom(30)
@@ -36,5 +34,12 @@ switch (room)	{
 		break;
 	case rm_level3:
 		apply_property(BallProperties.Gravity);
+		break;
+	case rm_level5:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.SpeedUp);
+		break;
+	default:
+		apply_property(BallProperties.NormalMovement);
 		break;
 }

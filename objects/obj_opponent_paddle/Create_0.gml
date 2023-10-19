@@ -19,8 +19,7 @@ properties = 0;
 
 // Set the properties based on the roomm
 switch (room)	{
-	case rm_level1:
-	case rm_level3:
+	default:
 		apply_property(EnemyProperties.VerticalMovement);
 		break;
 }

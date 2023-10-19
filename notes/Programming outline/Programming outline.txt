@@ -1,3 +1,8 @@
+Rebound angle is WRONG!
+Sort of
+It works for debounding off the left of a paddle, but not for the right
+probably because I'm a retard who can't do trigonometry
+
 Let's think about programming our first level
 The level manager needs to determine some things:
 	- Title

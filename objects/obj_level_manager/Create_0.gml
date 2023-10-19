@@ -1,25 +1,23 @@
 // Functions that we'll trigger with various ball events
 function hit_left()	{
-	switch (room)	{
-		case rm_level1:
-		case rm_level3:
-			player_score++;
-			break;
-			
+	switch (room)	{			
 		case rm_level2:
 			opponent_score++;
+			break;
+			
+		default:
+			player_score++;
 			break;
 	}
 }
 function hit_right()	{
-	switch (room)	{
-		case rm_level1:
-		case rm_level3:
-			opponent_score++;
-			break;
-			
+	switch (room)	{			
 		case rm_level2:
 			player_score++;
+			break;
+			
+		default:
+			opponent_score++;
 			break;
 	}
 }
