@@ -11,6 +11,8 @@ var ys = image_yscale;
 image_angle = 0;
 image_xscale = 1;
 image_yscale = 1;
+var paddle_collision = false;
+var wall_collision = false;
 
 // Basic pong movement
 if (check_property(BallProperties.NormalMovement))	{
@@ -20,6 +22,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		x += xspeed;
 	}
 	else	{
+		paddle_collision = true;
 		// Move to contact point
 		while (!place_meeting(x + sign(xspeed), y, par_paddle))	{
 			x += sign(xspeed);
@@ -66,6 +69,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		y += yspeed;
 	}
 	else	{
+		paddle_collision = true;
 		// Move to contact point	
 		while (!place_meeting(x, y + sign(yspeed), par_paddle))	{
 			y += sign(yspeed);
@@ -91,6 +95,8 @@ if (check_property(BallProperties.NormalMovement))	{
 			else
 				hit_right();
 		}
+		
+		wall_collision = true;
 	}
 	// Rebound top/bottom
 	if (bbox_top < 0 or bbox_bottom > room_height)	{
@@ -98,6 +104,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		rotation_dir *= -1;
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
 		ys = 0.5;
+		wall_collision = true;
 	}
 }
 
@@ -110,6 +117,7 @@ if (check_property(BallProperties.Gravity))	{
 		x += xspeed;
 	}
 	else	{
+		paddle_collision = true;
 		// Move to contact point
 		while (!place_meeting(x + sign(xspeed), y, par_paddle))	{
 			x += sign(xspeed);
@@ -128,6 +136,7 @@ if (check_property(BallProperties.Gravity))	{
 		y += yspeed;
 	}
 	else	{
+		paddle_collision = true;
 		// Move to contact point
 		while (!place_meeting(x, y + sign(yspeed), par_paddle))	{
 			y += sign(yspeed);
@@ -141,6 +150,7 @@ if (check_property(BallProperties.Gravity))	{
 	// Contact with room_boundaries
 	// Rebound left/right
 	if (bbox_left < 0 or bbox_right > room_width)	{
+		wall_collision = true;
 		xspeed *= -1;
 		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
 		xs = 0.5;
@@ -155,6 +165,7 @@ if (check_property(BallProperties.Gravity))	{
 	}
 	// Finally bounce against the floor
 	if (bbox_bottom > room_height)	{
+		wall_collision = true;
 		// Move to contact point
 		while (bbox_bottom > room_height)	{
 			y -= 1;
@@ -172,3 +183,13 @@ image_yscale = ys;
 // Lerp xscale and yscale towards 1
 image_xscale = lerp(image_xscale, 1, 0.1);
 image_yscale = lerp(image_yscale, 1, 0.1);
+
+if (wall_collision or paddle_collision)	{
+	with (obj_camera)	{
+		shake();
+	}
+}
+
+if (paddle_collision)	{
+	// Probbably want some particles or something
+}

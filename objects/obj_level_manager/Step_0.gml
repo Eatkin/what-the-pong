@@ -20,9 +20,9 @@ switch (room)	{
 			room_restart();
 		break;
 	case rm_level5:
-		if (player_score > 20)
+		if (player_score > 15)
 			room_goto_next();
-		if (opponent_score > 20)
+		if (opponent_score > 15)
 			room_restart();
 		break;
 }

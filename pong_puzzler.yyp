@@ -54,6 +54,7 @@
     {"id":{"name":"obj_renderer","path":"objects/obj_renderer/obj_renderer.yy",},},
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},},
     {"id":{"name":"scr_reset_text_alignment","path":"scripts/scr_reset_text_alignment/scr_reset_text_alignment.yy",},},
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
     {"id":{"name":"global_controller","path":"objects/global_controller/global_controller.yy",},},
     {"id":{"name":"rm_level3","path":"rooms/rm_level3/rm_level3.yy",},},

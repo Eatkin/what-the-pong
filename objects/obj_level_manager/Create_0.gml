@@ -48,3 +48,5 @@ switch (room)	{
 		scoreboard_style = ScoreboardStyle.PlayerOpponent;
 		break;
 }
+
+instance_create_layer(0, 0, layer, obj_camera);
