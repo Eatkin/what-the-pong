@@ -1,5 +1,6 @@
 enum EnemyProperties {
 	VerticalMovement,
+	Gravity,
 	Max
 }
 
@@ -19,6 +20,10 @@ properties = 0;
 
 // Set the properties based on the roomm
 switch (room)	{
+	case rm_level3:
+		apply_property(EnemyProperties.Gravity);
+		apply_property(EnemyProperties.VerticalMovement);
+		break;
 	default:
 		apply_property(EnemyProperties.VerticalMovement);
 		break;
@@ -46,8 +51,6 @@ lag_timer = lag_timer_max;
 
 // Opponent needs to be much smarter for with gravitas
 if (room == rm_level3)	{
-	x_fuzz = 10;
-	y_fuzz = 10;
-	lag_timer_max = 0.1 * room_speed;
+	lag_timer_max = 5;
 	lag_timer = lag_timer_max;
 }
