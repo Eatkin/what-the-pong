@@ -54,3 +54,8 @@ if (room == rm_level3)	{
 	lag_timer_max = 5;
 	lag_timer = lag_timer_max;
 }
+
+// Make opponent stupider for speedball because it's way too hard
+if (room == rm_level5)	{
+	lag_timer_max = 0.8 * room_speed;
+}
