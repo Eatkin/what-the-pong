@@ -62,6 +62,14 @@ if (check_property(BallProperties.NormalMovement))	{
 		xspeed = -sign(xspeed) * maxspeed * abs(dcos(rebound_angle));
 		yspeed -= dsin(rebound_angle) * maxspeed;
 		xs = 0.5;
+		
+		// Check if the paddle is the player's paddle, and if so we do some property checks
+		if (paddle.object_index == obj_player_paddle.object_index)	{
+			// Halve paddle size, don't go below 1 pixels
+			if (paddle.check_property(PlayerProperties.Shrinkray))	{
+				paddle.target_yscale = max(1/sprite_get_height(paddle.sprite_index), paddle.image_yscale * 0.5);
+			}
+		}
 	}
 
 	// Collisions with top/bottom of paddle (it's basically the same as above but simpler)

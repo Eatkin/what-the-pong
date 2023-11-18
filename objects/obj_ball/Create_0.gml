@@ -43,3 +43,7 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		break;
 }
+
+if (room == rm_level6)	{
+	xspeed *= -1;
+}

@@ -20,6 +20,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"rm_level6","order":6,"path":"rooms/rm_level6/rm_level6.yy",},
     {"name":"spr_ball","order":1,"path":"sprites/spr_ball/spr_ball.yy",},
     {"name":"obj_player_paddle","order":1,"path":"objects/obj_player_paddle/obj_player_paddle.yy",},
     {"name":"rm_level5","order":5,"path":"rooms/rm_level5/rm_level5.yy",},

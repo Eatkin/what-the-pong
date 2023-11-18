@@ -13,3 +13,4 @@ global.level_titles[? rm_level2] = "Squash court";
 global.level_titles[? rm_level3] = "With gravitas";
 global.level_titles[? rm_level4] = "A pair";
 global.level_titles[? rm_level5] = "Speedball";
+global.level_titles[? rm_level6] = "Shrinkray";

@@ -1,22 +1,7 @@
-Basically it's Pong but has levels like Flash and every level has a goal
-Maybe we can make it Wario ware sort of stylised
-1-bit
-opportunity to work on game feel or something
-We can have little subtitles now
-Score a point
-Level 1 it's pong, score a point
-Squash
-Level 2 it's squash, hit the ball 5 times
-With gravitas
-Level 3 it's pong, but with gravity
-Seeing double
-Level 4 it's pong, but with two balls
 Portal 3
 Level 5 it's pong, but portals open and close meaning the ball teleports around
 gnoP
 Level 6 it's pong, but the controls are reversed
-Speedball
-Level 7 it's pong, but every hit makes the ball faster
 Attraction
 Level 8 it's pong, but there's a magnet moving up and down that disrupts the ball
 No AI

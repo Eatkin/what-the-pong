@@ -23,3 +23,7 @@ if (check_property(PlayerProperties.VerticalMovement))	{
 	if (bbox_bottom > room_height or bbox_top < 0)
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
 }
+
+if (check_property(PlayerProperties.Shrinkray))	{
+	image_yscale = lerp(image_yscale, target_yscale, 0.1);
+}

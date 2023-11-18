@@ -1,9 +1,5 @@
 Some stuff:
-	Score counters
 	End level transitions properly
-	Some cool ass screen shake
-	Some sort of reset for the ball instead of just contuing eg in with gravitas
-	The with gravitas AI is hopeless, needs tweaking a bit more
 	
 End of level
 Make the ball explode into particles or something
