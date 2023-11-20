@@ -9,7 +9,8 @@ timer = 0;
 timer_step = 1 / room_speed;
 
 instance_destroy(obj_ball);
-instance_destroy(obj_opponent_paddle);
 
 cam = view_camera[0];
 alpha = 0;
+
+win = false;

@@ -4,8 +4,18 @@ enum ScoreboardStyle {
 	PlayerCountdown,
 }
 
-function level_end()	{
-	instance_create_layer(0, 0, layer, obj_level_end);
+function level_end(_won)	{
+	var vars = {
+		win: _won
+	};
+	instance_create_layer(0, 0, layer, obj_level_end, vars);
+	
+	if (_won)	{
+		instance_destroy(obj_opponent_paddle);
+	}
+	else	{
+		instance_destroy(obj_player_paddle);
+	}
 }
 
 // Functions that we'll trigger with various ball events

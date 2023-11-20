@@ -8,3 +8,5 @@ Also determine whether to blow up opponent or player paddle
 Need logic to determine whether we go to next level or restart the room on level end
 
 Transition looks shit
+
+Need a transition in too, can just be a fade. Or maybe it'll be fine. Idk.

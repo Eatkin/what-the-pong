@@ -22,7 +22,11 @@ if (timer >= 1)	{
 	timer = 1;
 	alpha += timer_step;
 	if (alpha >= 1)	{
-		// TODO: add win conditions
-		room_goto_next();
+		if (win)	{
+			room_goto_next();
+		}
+		else	{
+			room_restart();
+		}
 	}
 }
