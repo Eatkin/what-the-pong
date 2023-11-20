@@ -10,8 +10,6 @@ Obstacle course
 Level 10 it's pong, but with a bunch of obstacles
 You are the ball
 Level 11 you are the ball
-Shrinkray
-Level 12 it's pong, but every time you hit the ball your paddle becomes smaller
 Hard to see
 Level 13 it's pong, but when you move your paddle fades away
 N Pongism

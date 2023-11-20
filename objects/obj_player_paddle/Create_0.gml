@@ -4,6 +4,11 @@ enum Input {
 	Down = vk_down,
 	Left = vk_left,
 	Right = vk_right,
+	AltUp = ord("W"),
+	AltDown = ord("S"),
+	AltLeft = ord("A"),
+	AltRight = ord("D"),
+	Action = vk_space
 }
 
 enum PlayerProperties {
