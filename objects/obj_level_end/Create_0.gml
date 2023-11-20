@@ -13,4 +13,4 @@ instance_destroy(obj_ball);
 cam = view_camera[0];
 alpha = 0;
 
-win = false;
+global.in_play = false;
