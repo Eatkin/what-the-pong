@@ -41,6 +41,7 @@
     {"id":{"name":"obj_level_title","path":"objects/obj_level_title/obj_level_title.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},
     {"id":{"name":"obj_player_paddle","path":"objects/obj_player_paddle/obj_player_paddle.yy",},},
+    {"id":{"name":"obj_level_end","path":"objects/obj_level_end/obj_level_end.yy",},},
     {"id":{"name":"rm_level5","path":"rooms/rm_level5/rm_level5.yy",},},
     {"id":{"name":"Game Outline","path":"notes/Game Outline/Game Outline.yy",},},
     {"id":{"name":"Programming outline","path":"notes/Programming outline/Programming outline.yy",},},

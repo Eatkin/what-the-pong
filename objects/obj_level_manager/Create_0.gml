@@ -4,6 +4,10 @@ enum ScoreboardStyle {
 	PlayerCountdown,
 }
 
+function level_end()	{
+	instance_create_layer(0, 0, layer, obj_level_end);
+}
+
 // Functions that we'll trigger with various ball events
 function hit_left()	{
 	switch (room)	{			

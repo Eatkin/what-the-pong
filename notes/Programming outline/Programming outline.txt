@@ -3,3 +3,8 @@ Some stuff:
 	
 End of level
 Make the ball explode into particles or something
+Add destroy events to the ball and the paddles for some particles n shit
+Also determine whether to blow up opponent or player paddle
+Need logic to determine whether we go to next level or restart the room on level end
+
+Transition looks shit

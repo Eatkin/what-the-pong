@@ -23,6 +23,7 @@
     {"name":"rm_level6","order":6,"path":"rooms/rm_level6/rm_level6.yy",},
     {"name":"spr_ball","order":1,"path":"sprites/spr_ball/spr_ball.yy",},
     {"name":"obj_player_paddle","order":1,"path":"objects/obj_player_paddle/obj_player_paddle.yy",},
+    {"name":"obj_level_end","order":2,"path":"objects/obj_level_end/obj_level_end.yy",},
     {"name":"rm_level5","order":5,"path":"rooms/rm_level5/rm_level5.yy",},
     {"name":"Programming outline","order":1,"path":"notes/Programming outline/Programming outline.yy",},
     {"name":"obj_level_manager","order":1,"path":"objects/obj_level_manager/obj_level_manager.yy",},
