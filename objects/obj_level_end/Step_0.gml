@@ -5,8 +5,7 @@ var _ease = easeInBack(timer);
 
 var _angle_limit = (sign(_ease) == -1) ? 90 : 360;
 var _angle = _angle_limit * _ease;
-var _zoom = 1 + _ease;
-_zoom = 1;
+var _zoom = 1 - _ease;
 // Default camera size
 var _width = room_width;
 var _height = room_height;
