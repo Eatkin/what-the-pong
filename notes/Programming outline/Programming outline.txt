@@ -10,3 +10,6 @@ Need logic to determine whether we go to next level or restart the room on level
 Transition looks shit
 
 Need a transition in too, can just be a fade. Or maybe it'll be fine. Idk.
+
+Make some level aliases so I can order them later on or something idk
+Can use a grid or 2d array

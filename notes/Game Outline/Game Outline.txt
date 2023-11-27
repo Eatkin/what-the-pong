@@ -20,3 +20,5 @@ Pong Volleyball
 Level 16 it's pong but slime volleyball
 Tradeoff
 Level 17 you can shoot balls as much as you'd like but that means there's more balls to deal with
+Cross the line
+Level 18 you have to move horizontally slowly to get across a vertical line so difficulty increases as you approach it
