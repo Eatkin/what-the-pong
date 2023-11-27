@@ -41,7 +41,18 @@ var view_ang = camera_get_view_angle(_cam);
 var vw = camera_get_view_width(_cam);
 var vh = camera_get_view_height(_cam);
 var _scale = vw / room_width;
-// Todo: translate the offsets based on the rotation angle
-var xoffset = (1 + dcos(view_ang)) * 0.5 * (room_width - vw);
-var yoffset = (1 - dsin(view_ang)) * 0.5 * (room_height - vh);
-draw_surface_ext(surf, xoffset, yoffset, _scale, _scale, view_ang, c_white, 1);
+
+// Translate the surface
+// What the fuck am I doing
+var xoffset, yoffset, xx, yy, xtrans, ytrans;
+// Coordinates
+xx = 0.5 * (room_width - vw);
+yy = 0.5 * (room_height - vh);
+// Translate coordinates such that the surface is centred on (0, 0)
+// (There is some redundancy here but who tf cares fight me)
+xtrans = xx - room_width * 0.5;
+ytrans = yy - room_height * 0.5;
+// Translate coordinates
+xoffset = xtrans * dcos(view_ang) + ytrans * dsin(view_ang);
+yoffset = ytrans * dcos(view_ang) - xtrans * dsin(view_ang);
+draw_surface_ext(surf, xx + xoffset + 0.5 * room_width, yy + yoffset + 0.5 * room_height, _scale, _scale, view_ang, c_white, 1);
