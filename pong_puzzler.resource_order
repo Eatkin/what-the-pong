@@ -18,6 +18,7 @@
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Effects","order":8,"path":"folders/Objects/Effects.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"rm_level6","order":6,"path":"rooms/rm_level6/rm_level6.yy",},

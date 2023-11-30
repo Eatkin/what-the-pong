@@ -61,7 +61,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		}
 		xspeed = -sign(xspeed) * maxspeed * abs(dcos(rebound_angle));
 		yspeed -= dsin(rebound_angle) * maxspeed;
-		xs = 0.5;
+		xs = 2;
 		
 		// Check if the paddle is the player's paddle, and if so we do some property checks
 		if (paddle.object_index == obj_player_paddle.object_index)	{
@@ -87,7 +87,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		// We will not get stuck inside since that is accounted for in the x-movement
 		// Simple physics - just rebound against the paddle
 		yspeed *= -1;
-		ys = 0.5;
+		ys = 2;
 	}
 
 	// Contact with room_boundaries
@@ -95,7 +95,7 @@ if (check_property(BallProperties.NormalMovement))	{
 	if (bbox_left < 0 or bbox_right > room_width)	{
 		xspeed *= -1;
 		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
-		xs = 0.5;
+		xs = 2;
 		
 		// Trigger even with obj_level_manager
 		var xx = x;
@@ -113,7 +113,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		yspeed *= -1;
 		rotation_dir *= -1;
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
-		ys = 0.5;
+		ys = 2;
 		wall_collision = true;
 	}
 }
@@ -138,7 +138,7 @@ if (check_property(BallProperties.Gravity))	{
 		}
 		// Now rebound
 		xspeed *= -1;
-		xs = 0.5;
+		xs = 2;
 	}
 
 	// Now deal with collisions with top/bottom of paddle
@@ -154,7 +154,7 @@ if (check_property(BallProperties.Gravity))	{
 		// Now rebound
 		yspeed *= -1;
 		rotation_dir *= -1;
-		ys = 0.5;
+		ys = 2;
 	}
 
 	// Contact with room_boundaries
@@ -163,7 +163,7 @@ if (check_property(BallProperties.Gravity))	{
 		wall_collision = true;
 		xspeed *= -1;
 		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
-		xs = 0.5;
+		xs = 2;
 
 		var xx = x;
 		with (obj_level_manager)	{
@@ -181,7 +181,7 @@ if (check_property(BallProperties.Gravity))	{
 			y -= 1;
 		}
 		yspeed *= -1;
-		ys = 0.5;
+		ys = 2;
 	}
 }
 

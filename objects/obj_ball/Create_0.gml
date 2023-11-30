@@ -47,3 +47,5 @@ switch (room)	{
 if (room == rm_level6)	{
 	xspeed *= -1;
 }
+
+scale = 1;

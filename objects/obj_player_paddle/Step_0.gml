@@ -24,6 +24,21 @@ if (check_property(PlayerProperties.VerticalMovement))	{
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
 }
 
+var stretch_strength = 0.02;	// Vertical scaling
+var squash_strength = 0.01;		// Horizontal scaling
+var dy = abs(y - yprevious);
 if (check_property(PlayerProperties.Shrinkray))	{
-	image_yscale = lerp(image_yscale, target_yscale, 0.1);
+	// Deal with stretching from movement
+	var _tys = target_yscale;
+	_tys += stretch_strength * dy;
+	image_yscale = lerp(image_yscale, _tys, 0.5);
+	var _tyx = 1 - squash_strength * dy;
+	image_xscale = lerp(image_xscale, _tyx, 0.5);
+}
+else	{
+	// If we're not on the shrinkray level we set target yscale
+	var _tys = 1 + stretch_strength * dy;
+	image_yscale = lerp(image_yscale, _tys, 0.5);
+	var _tyx = 1 - squash_strength * dy;
+	image_xscale = lerp(image_xscale, _tyx, 0.5);
 }
