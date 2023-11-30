@@ -203,3 +203,11 @@ if (wall_collision or paddle_collision)	{
 if (paddle_collision)	{
 	// Probbably want some particles or something
 }
+
+// Create the trail effect
+var _vars = {
+	image_xscale: xs,
+	image_angle: angle,
+	image_yscale: ys,
+};
+instance_create_layer(x, y, layer, obj_ball_trail, _vars);
