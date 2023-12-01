@@ -3,7 +3,16 @@ function render_obj(obj)	{
 		var inst = instance_find(obj, i);
 		with (inst)	{
 			image_blend = c_black;
-			draw_self();
+			// Draw with the yoffset but if the yoffset variable doesn't exist it'll fall through
+			if (variable_instance_exists(id, "yoffset"))	{
+				var yy = y;
+				y = y - yoffset;
+				draw_self();
+				y = yy;
+			}
+			else	{
+				draw_self();
+			}
 			image_blend = c_white;
 		}
 	}

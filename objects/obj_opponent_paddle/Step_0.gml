@@ -1,3 +1,5 @@
+event_inherited();
+
 if (!global.in_play)	{
 	exit;
 }

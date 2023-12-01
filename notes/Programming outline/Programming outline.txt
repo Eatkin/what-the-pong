@@ -7,8 +7,4 @@ Make some level aliases so I can order them later on or something idk
 Can use a grid or 2d array
 
 Particles n shit:
-	Paddles and balls should ease in
-	So should the title
-	And score board
-	Scoreboard text should shake or zoom or something whenever a point is scored
-	It should also throw out little number particles
+	Scoreboard should ease in using elastic easing

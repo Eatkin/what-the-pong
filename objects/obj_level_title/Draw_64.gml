@@ -1,6 +1,6 @@
 // Draw in the centre of the screen, almost
 var xx = room_width * 0.5;
-var yy = room_height * 0.3;
+var yy = room_height * 0.3 - yoffset;
 
 // Draw the title
 draw_set_font(fnt_press_start);

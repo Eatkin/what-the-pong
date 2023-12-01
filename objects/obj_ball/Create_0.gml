@@ -24,6 +24,8 @@ grav = 0.5;
 
 properties = 0;
 
+yoffset = room_height * (0.5 + random(0.5));
+
 switch (room)	{
 	case rm_level2:
 		apply_property(BallProperties.NormalMovement);

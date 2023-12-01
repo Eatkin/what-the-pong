@@ -1,3 +1,5 @@
+event_inherited();
+
 // Let's set up some enums
 enum Input {
 	Up = vk_up,
