@@ -18,6 +18,17 @@ function level_end(_won)	{
 	}
 }
 
+function create_text_particle(xx, yy, txt)	{
+	var vars = {
+		text: txt,
+	};
+	instance_create_layer(xx, yy, layer, obj_text_particle, vars);
+}
+
+x_centre = room_width * 0.5;
+y_centre = room_height * 0.1;
+x_shift = string_width(" - ");
+
 // Functions that we'll trigger with various ball events
 function hit_left()	{
 	switch (room)	{			
@@ -26,18 +37,24 @@ function hit_left()	{
 			break;
 			
 		default:
+			create_text_particle(x_centre + x_shift, y_centre, string(player_score));
 			player_score++;
+			player_score_scale = 2;
 			break;
 	}
 }
 function hit_right()	{
 	switch (room)	{			
 		case rm_level2:
+			create_text_particle(x_centre, y_centre, string(target_score - player_score));
 			player_score++;
+			player_score_scale = 2;
 			break;
 			
 		default:
+			create_text_particle(x_centre - x_shift, y_centre, string(opponent_score));
 			opponent_score++;
+			opponent_score_scale = 2;
 			break;
 	}
 }
@@ -45,6 +62,8 @@ function hit_right()	{
 player_score = 0;
 opponent_score = 0;
 target_score = 0;
+player_score_scale = 1;
+opponent_score_scale = 1;
 
 instance_create_layer(x, y, layer_get_id("UI"), obj_level_title);
 

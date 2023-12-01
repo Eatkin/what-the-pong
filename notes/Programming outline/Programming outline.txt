@@ -7,8 +7,8 @@ Make some level aliases so I can order them later on or something idk
 Can use a grid or 2d array
 
 Particles n shit:
-	Ball scale increase when it hits paddles or walls
-	Ball trail
 	Paddles and balls should ease in
 	So should the title
-	Particles for when the ball hits things
+	And score board
+	Scoreboard text should shake or zoom or something whenever a point is scored
+	It should also throw out little number particles

@@ -198,6 +198,24 @@ if (wall_collision or paddle_collision)	{
 	with (obj_camera)	{
 		shake();
 	}
+	var xx = x;
+	var yy = y;
+	var ball_xspeed = xspeed;
+	var ball_yspeed = yspeed;
+	with (obj_particle_manager)	{
+		// We can use the fact that xs and ys change to 2 to decide which direction to emit particles
+		// Which is pretty fucking jank I admit but w/e man
+		var dir = -1;
+		if (xs == 2)	{
+			dir = (sign(ball_xspeed) == 1) ? 0 : 180;
+		}
+		if (ys == 2)	{
+			dir = (sign(ball_yspeed) == 1) ? 270 : 90;
+		}
+		if (dir != -1)	{
+			create_particles(xx, yy, dir, pixel_part);
+		}
+	}
 }
 
 if (paddle_collision)	{

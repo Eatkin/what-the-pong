@@ -31,6 +31,7 @@
     {"name":"obj_level_manager","order":1,"path":"objects/obj_level_manager/obj_level_manager.yy",},
     {"name":"rm_level2","order":2,"path":"rooms/rm_level2/rm_level2.yy",},
     {"name":"rm_level4","order":4,"path":"rooms/rm_level4/rm_level4.yy",},
+    {"name":"obj_text_particle","order":1,"path":"objects/obj_text_particle/obj_text_particle.yy",},
     {"name":"fnt_press_start_large","order":1,"path":"fonts/fnt_press_start_large/fnt_press_start_large.yy",},
     {"name":"par_paddle","order":2,"path":"objects/par_paddle/par_paddle.yy",},
     {"name":"obj_opponent_paddle","order":3,"path":"objects/obj_opponent_paddle/obj_opponent_paddle.yy",},

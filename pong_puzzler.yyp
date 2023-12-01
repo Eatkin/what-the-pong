@@ -50,6 +50,7 @@
     {"id":{"name":"obj_level_manager","path":"objects/obj_level_manager/obj_level_manager.yy",},},
     {"id":{"name":"rm_level2","path":"rooms/rm_level2/rm_level2.yy",},},
     {"id":{"name":"rm_level4","path":"rooms/rm_level4/rm_level4.yy",},},
+    {"id":{"name":"obj_text_particle","path":"objects/obj_text_particle/obj_text_particle.yy",},},
     {"id":{"name":"obj_particle_manager","path":"objects/obj_particle_manager/obj_particle_manager.yy",},},
     {"id":{"name":"fnt_press_start_large","path":"fonts/fnt_press_start_large/fnt_press_start_large.yy",},},
     {"id":{"name":"spr_paddle","path":"sprites/spr_paddle/spr_paddle.yy",},},

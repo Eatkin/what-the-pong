@@ -31,3 +31,7 @@ switch (room)	{
 		if (opponent_score > 0)
 			level_end(false);
 }
+
+// Lerp the scales
+player_score_scale = lerp(player_score_scale, 1, 0.2);
+opponent_score_scale = lerp(opponent_score_scale, 1, 0.2);
