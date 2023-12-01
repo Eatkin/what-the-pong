@@ -9,7 +9,7 @@ if (keyboard_check_pressed(vk_anykey) and yoffset == 0)	{
 }
 
 yoffset = lerp(yoffset, 0, 0.1);
-var threshold = 0.1;
+var threshold = 2;
 if (yoffset < threshold)	{
 	yoffset = 0;
 }

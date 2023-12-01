@@ -35,3 +35,10 @@ switch (room)	{
 // Lerp the scales
 player_score_scale = lerp(player_score_scale, 1, 0.2);
 opponent_score_scale = lerp(opponent_score_scale, 1, 0.2);
+
+// Ease the scoreboard in
+if (global.in_play)	{
+	timer -= timer_step;
+	timer = max(0, timer);
+	scoreboard_yoffset = scoreboard_yoffset_start * easeInElastic(timer);
+}

@@ -25,6 +25,11 @@ function create_text_particle(xx, yy, txt)	{
 	instance_create_layer(xx, yy, layer, obj_text_particle, vars);
 }
 
+function easeInElastic(t) {
+	var c4 = (2 * pi) / 3;
+	return (t == 0) ? 0 : ((t == 1) ? 1 :  -power(2, 10 * t - 10) * sin((t * 10 - 10.75) * c4));
+}
+
 x_centre = room_width * 0.5;
 y_centre = room_height * 0.1;
 x_shift = string_width(" - ");
@@ -83,3 +88,8 @@ switch (room)	{
 }
 
 instance_create_layer(0, 0, layer, obj_camera);
+
+scoreboard_yoffset_start = room_height * (0.25 + random(0.25));
+scoreboard_yoffset = scoreboard_yoffset_start;
+timer = 1;
+timer_step = 1 / room_speed;
