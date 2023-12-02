@@ -15,6 +15,16 @@ camera_set_view_angle(cam, _angle);
 camera_set_view_size(cam, _width / _zoom, _height / _zoom);
 camera_set_view_pos(cam, 0.5 * _width * (1 - 1 / _zoom), 0.5 * _height * (1 - 1 / _zoom));
 
+if (timer == 0)	{
+	if (win)	{
+		var snd = snd_win;
+	}
+	else	{
+		var snd = snd_lose;
+	}
+	audio_play_sound(snd, 0, false);
+}
+
 timer += timer_step;
 
 if (timer >= 1)	{

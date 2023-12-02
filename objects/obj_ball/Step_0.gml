@@ -201,6 +201,10 @@ image_xscale = lerp(image_xscale, 1, 0.1);
 image_yscale = lerp(image_yscale, 1, 0.1);
 
 if (wall_collision or paddle_collision)	{
+	// Sounds
+	var snd_selection = snd_ballhit3;
+	var pitch = 0.95 + random(0.1);
+	audio_play_sound(snd_selection, 0, false, 1, 0, pitch);
 	with (obj_camera)	{
 		shake();
 	}

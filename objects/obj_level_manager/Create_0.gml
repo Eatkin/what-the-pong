@@ -4,7 +4,14 @@ enum ScoreboardStyle {
 	PlayerCountdown,
 }
 
+level_ended = false;
+
 function level_end(_won)	{
+	if (level_ended)	{
+		return 0;
+	}
+	
+	level_ended = true;
 	var vars = {
 		win: _won
 	};
