@@ -2,6 +2,7 @@ enum BallProperties {
 	NormalMovement,
 	Gravity,
 	SpeedUp,
+	Accelerate,
 	Max
 }
 
@@ -41,6 +42,9 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.SpeedUp);
 		break;
+	case rm_level7:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.Accelerate);
 	default:
 		apply_property(BallProperties.NormalMovement);
 		break;

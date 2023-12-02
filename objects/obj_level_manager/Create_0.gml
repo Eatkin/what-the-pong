@@ -52,6 +52,7 @@ function hit_left()	{
 			create_text_particle(x_centre + x_shift, y_centre, string(player_score));
 			player_score++;
 			player_score_scale = 2;
+			timer = 0.9;
 			break;
 	}
 }
@@ -61,12 +62,14 @@ function hit_right()	{
 			create_text_particle(x_centre, y_centre, string(target_score - player_score));
 			player_score++;
 			player_score_scale = 2;
+			timer = 0.9;
 			break;
 			
 		default:
 			create_text_particle(x_centre - x_shift, y_centre, string(opponent_score));
 			opponent_score++;
 			opponent_score_scale = 2;
+			timer = 0.9;
 			break;
 	}
 }

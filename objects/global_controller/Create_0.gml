@@ -1,4 +1,10 @@
+randomise();
+
+hide_scrollbar_init();
+
 // Insert resolution management here
+screenWidth = 960
+screenHeight = 540;
 
 // Global variables
 global.in_play = false;

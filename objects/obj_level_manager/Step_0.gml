@@ -27,7 +27,7 @@ switch (room)	{
 			level_end(false);
 		break;
 	case rm_level6:
-		if (player_score > 2)
+		if (player_score > 0)
 			level_end(true);
 		if (opponent_score > 0)
 			level_end(false);

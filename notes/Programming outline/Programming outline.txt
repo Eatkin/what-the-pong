@@ -7,4 +7,6 @@ Make some level aliases so I can order them later on or something idk
 Can use a grid or 2d array
 
 Particles n shit:
-	Scoreboard should ease in using elastic easing
+	Upon loss the player paddle explodes
+	
+Resolution management

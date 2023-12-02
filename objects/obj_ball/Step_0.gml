@@ -239,3 +239,7 @@ var _vars = {
 	image_yscale: ys,
 };
 instance_create_layer(x, y, layer, obj_ball_trail, _vars);
+
+if (check_property(BallProperties.Accelerate))	{
+	maxspeed *= 1.0001;
+}
