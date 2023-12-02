@@ -89,7 +89,7 @@ switch (room)	{
 
 instance_create_layer(0, 0, layer, obj_camera);
 
-scoreboard_yoffset_start = room_height * (0.25 + random(0.25));
+scoreboard_yoffset_start = 2 * y_centre;
 scoreboard_yoffset = scoreboard_yoffset_start;
 timer = 1;
 timer_step = 1 / room_speed;
