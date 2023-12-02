@@ -51,6 +51,9 @@ y_pred = obj_ball.y + 2 * irandom(y_fuzz) - y_fuzz;
 lag_timer_max = 0.25 * room_speed;
 lag_timer = lag_timer_max;
 
+x_scale = 1;
+y_scale = 1;
+
 // Opponent needs to be much smarter for with gravitas
 if (room == rm_level3)	{
 	lag_timer_max = 5;
@@ -60,4 +63,13 @@ if (room == rm_level3)	{
 // Make opponent stupider for speedball because it's way too hard
 if (room == rm_level5)	{
 	lag_timer_max = 0.8 * room_speed;
+}
+
+// Boss fight level has larger paddle and is less stupid
+if (room == rm_level7)	{
+	var _scale = 2;
+	x_scale = _scale;
+	y_scale = _scale;
+	lag_timer_max = room_speed * 0.1;
+	y_fuzz = 0;
 }

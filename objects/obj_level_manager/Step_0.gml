@@ -14,6 +14,7 @@ switch (room)	{
 		break;
 	case rm_level3:
 	case rm_level4:
+	case rm_level7:
 		if (player_score > 3)
 			level_end(true);
 		if (opponent_score > 3)
@@ -22,7 +23,7 @@ switch (room)	{
 	case rm_level5:
 		if (player_score > 15)
 			level_end(true);
-		if (opponent_score > 15)
+		if (opponent_score > 16)
 			level_end(false);
 		break;
 	case rm_level6:

@@ -25,6 +25,7 @@
     {"name":"obj_music","order":3,"path":"objects/obj_music/obj_music.yy",},
     {"name":"rm_level6","order":6,"path":"rooms/rm_level6/rm_level6.yy",},
     {"name":"spr_ball","order":1,"path":"sprites/spr_ball/spr_ball.yy",},
+    {"name":"rm_level7","order":7,"path":"rooms/rm_level7/rm_level7.yy",},
     {"name":"obj_player_paddle","order":1,"path":"objects/obj_player_paddle/obj_player_paddle.yy",},
     {"name":"snd_explosion","order":4,"path":"sounds/snd_explosion/snd_explosion.yy",},
     {"name":"snd_ballhit2","order":2,"path":"sounds/snd_ballhit2/snd_ballhit2.yy",},

@@ -44,6 +44,7 @@
     {"id":{"name":"obj_level_title","path":"objects/obj_level_title/obj_level_title.yy",},},
     {"id":{"name":"chiptune_grooving_142242","path":"sounds/chiptune_grooving_142242/chiptune_grooving_142242.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},
+    {"id":{"name":"rm_level7","path":"rooms/rm_level7/rm_level7.yy",},},
     {"id":{"name":"obj_player_paddle","path":"objects/obj_player_paddle/obj_player_paddle.yy",},},
     {"id":{"name":"snd_explosion","path":"sounds/snd_explosion/snd_explosion.yy",},},
     {"id":{"name":"snd_ballhit2","path":"sounds/snd_ballhit2/snd_ballhit2.yy",},},
@@ -87,6 +88,7 @@
     {"roomId":{"name":"rm_level4","path":"rooms/rm_level4/rm_level4.yy",},},
     {"roomId":{"name":"rm_level5","path":"rooms/rm_level5/rm_level5.yy",},},
     {"roomId":{"name":"rm_level6","path":"rooms/rm_level6/rm_level6.yy",},},
+    {"roomId":{"name":"rm_level7","path":"rooms/rm_level7/rm_level7.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
