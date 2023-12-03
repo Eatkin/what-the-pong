@@ -3,7 +3,12 @@ enum BallProperties {
 	Gravity,
 	SpeedUp,
 	Accelerate,
+	Magnet,
 	Max
+}
+
+function easeOutExpo(t) {
+	return t == 1 ? 1 : 1 - power(2, -10 * t);
 }
 
 function apply_property(property)	{
@@ -26,6 +31,7 @@ grav = 0.5;
 properties = 0;
 
 yoffset = room_height * (0.5 + random(0.5));
+lerp_strength = 0.1 - 0.05 + random(0.1);
 
 switch (room)	{
 	case rm_level2:
@@ -45,6 +51,11 @@ switch (room)	{
 	case rm_level7:
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.Accelerate);
+		break;
+	case rm_level9:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.Magnet);
+		break;
 	default:
 		apply_property(BallProperties.NormalMovement);
 		break;

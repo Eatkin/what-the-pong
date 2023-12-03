@@ -21,3 +21,5 @@ global.level_titles[? rm_level4] = "A pair";
 global.level_titles[? rm_level5] = "Speedball";
 global.level_titles[? rm_level6] = "Shrinkray";
 global.level_titles[? rm_level7] = "Boss Fight";
+global.level_titles[? rm_level8] = "gnoP";
+global.level_titles[? rm_level9] = "Attraction";

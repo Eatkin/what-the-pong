@@ -43,9 +43,12 @@ x_shift = string_width(" - ");
 
 // Functions that we'll trigger with various ball events
 function hit_left()	{
+	var snd = noone;
+	
 	switch (room)	{			
 		case rm_level2:
 			opponent_score++;
+			snd = snd_opponent_score;
 			break;
 			
 		default:
@@ -53,16 +56,25 @@ function hit_left()	{
 			player_score++;
 			player_score_scale = 2;
 			timer = 0.9;
+			snd = snd_score;
 			break;
+	}
+	
+	if (snd != noone)	{
+		var pitch = 0.95 + random(0.1);
+		audio_play_sound(snd, 0, false, 1, 0, pitch);
 	}
 }
 function hit_right()	{
+	var snd = noone;
+	
 	switch (room)	{			
 		case rm_level2:
 			create_text_particle(x_centre, y_centre, string(target_score - player_score));
 			player_score++;
 			player_score_scale = 2;
 			timer = 0.9;
+			snd = snd_score;
 			break;
 			
 		default:
@@ -70,7 +82,13 @@ function hit_right()	{
 			opponent_score++;
 			opponent_score_scale = 2;
 			timer = 0.9;
+			snd = snd_opponent_score;
 			break;
+	}
+	
+	if (snd != noone)	{
+		var pitch = 0.95 + random(0.1);
+		audio_play_sound(snd, 0, false, 1, 0, pitch);
 	}
 }
 

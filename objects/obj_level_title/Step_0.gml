@@ -8,7 +8,7 @@ if (keyboard_check_pressed(vk_anykey) and yoffset == 0)	{
 	global.in_play = true;
 }
 
-yoffset = lerp(yoffset, 0, 0.1);
+yoffset = lerp(yoffset, 0, lerp_strength);
 var threshold = 2;
 if (yoffset < threshold)	{
 	yoffset = 0;

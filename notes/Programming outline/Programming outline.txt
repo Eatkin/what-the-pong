@@ -9,4 +9,12 @@ Can use a grid or 2d array
 Particles n shit:
 	Upon loss the player paddle explodes
 	
-Resolution management
+The win sound is shit
+
+We should also add sounds for scoring and losing a point
+
+Menu screen:
+	Numbered levels like in a flash game
+	Little icon when you hover over to show what the level looks like plus level title
+	
+Custom cursor

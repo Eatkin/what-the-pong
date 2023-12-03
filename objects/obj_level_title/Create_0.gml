@@ -8,3 +8,4 @@ rot_rate = 2;
 global.in_play = false;
 
 yoffset = room_height * (0.5 + random(0.5));
+lerp_strength = 0.1 - 0.05 + random(0.1);

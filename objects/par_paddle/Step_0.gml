@@ -1,5 +1,5 @@
-yoffset = lerp(yoffset, 0, 0.1);
-var threshold = 1;
+yoffset = lerp(yoffset, 0, lerp_strength);
+var threshold = 2;
 if (yoffset < threshold)	{
 	yoffset = 0;
 }

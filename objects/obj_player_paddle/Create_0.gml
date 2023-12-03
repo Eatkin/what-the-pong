@@ -16,6 +16,7 @@ enum Input {
 enum PlayerProperties {
 	VerticalMovement,
 	Shrinkray,
+	ReverseControls,
 	Max
 }
 
@@ -38,6 +39,10 @@ switch (room)	{
 	case rm_level6:
 		apply_property(PlayerProperties.Shrinkray);
 		apply_property(PlayerProperties.VerticalMovement);
+		break;
+	case rm_level8:
+		apply_property(PlayerProperties.VerticalMovement);
+		apply_property(PlayerProperties.ReverseControls);
 		break;
 	default:
 		apply_property(PlayerProperties.VerticalMovement);

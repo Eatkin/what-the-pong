@@ -1,7 +1,7 @@
 image_angle += rotation_speed * rotation_dir;
 
-yoffset = lerp(yoffset, 0, 0.1);
-var threshold = 1;
+yoffset = lerp(yoffset, 0, lerp_strength);
+var threshold = 2;
 if (yoffset < threshold)	{
 	yoffset = 0;
 }
@@ -229,7 +229,8 @@ if (wall_collision or paddle_collision)	{
 }
 
 if (paddle_collision)	{
-	// Probbably want some particles or something
+	// Probbably want some particles or something or nothing instead lol
+	// Because I already handles this in the shittest way possible
 }
 
 // Create the trail effect
@@ -240,6 +241,38 @@ var _vars = {
 };
 instance_create_layer(x, y, layer, obj_ball_trail, _vars);
 
+// Accelerate during boss fight
 if (check_property(BallProperties.Accelerate))	{
-	maxspeed *= 1.0001;
+	maxspeed *= 1.0002;
+}
+
+// Be attracted to the magnet in the y-plane
+if (check_property(BallProperties.Magnet))	{
+	var max_strength = 1;
+	var effect_dist = 128;
+	var actual_dist = distance_to_point(obj_magnet.x, obj_magnet.y);
+	if (actual_dist < effect_dist)	{
+		// Magnet affects yspeed only
+		var strength = easeOutExpo(1 - effect_dist / actual_dist) * max_strength;
+		yspeed += strength * sign(y - obj_magnet.y);
+		
+		// Resolve into components to make sure angle does not exceed 45 degrees
+		var angle = darctan2(yspeed, xspeed);
+		if (angle == clamp(angle, 45, 135))	{
+			if (angle < 90)
+				angle = 45;
+			else
+				angle = 135;
+		}
+		if (angle == clamp(angle, 225, 335))	{
+			if (angle < 270)
+				angle = 225;
+			else
+				angle = 335;
+		}
+		
+		// Now make sure we aren't exceeding max speed
+		xspeed = maxspeed * dcos(angle);
+		yspeed = -maxspeed * dsin(angle);
+	}
 }

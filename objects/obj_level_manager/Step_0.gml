@@ -12,14 +12,6 @@ switch (room)	{
 		if (opponent_score > 0)
 			level_end(false);
 		break;
-	case rm_level3:
-	case rm_level4:
-	case rm_level7:
-		if (player_score > 3)
-			level_end(true);
-		if (opponent_score > 3)
-			level_end(false);
-		break;
 	case rm_level5:
 		if (player_score > 15)
 			level_end(true);
@@ -31,6 +23,13 @@ switch (room)	{
 			level_end(true);
 		if (opponent_score > 0)
 			level_end(false);
+		break;
+	default:
+		if (player_score > 3)
+			level_end(true);
+		if (opponent_score > 3)
+			level_end(false);
+		break;
 }
 
 // Lerp the scales

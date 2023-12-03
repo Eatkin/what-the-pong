@@ -1,7 +1,5 @@
 Portal 3
 Level 5 it's pong, but portals open and close meaning the ball teleports around
-gnoP
-Level 6 it's pong, but the controls are reversed
 Attraction
 Level 8 it's pong, but there's a magnet moving up and down that disrupts the ball
 No AI
@@ -24,3 +22,5 @@ Cross the line
 Level 18 you have to move horizontally slowly to get across a vertical line so difficulty increases as you approach it
 Multiplyer
 Level 19 every time you hit the ball it multiplies
+Vertical
+Level 20 you're at the bottom of the screen and opponent is at the top
