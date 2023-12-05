@@ -63,6 +63,7 @@
     {"name":"refs","order":2,"path":"notes/refs/refs.yy",},
     {"name":"obj_eyeball","order":2,"path":"objects/obj_eyeball/obj_eyeball.yy",},
     {"name":"spr_pupil","order":4,"path":"sprites/spr_pupil/spr_pupil.yy",},
+    {"name":"rm_level12","order":12,"path":"rooms/rm_level12/rm_level12.yy",},
     {"name":"kim_lightyear_legends_109307","order":2,"path":"sounds/kim_lightyear_legends_109307/kim_lightyear_legends_109307.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"rm_level1","order":1,"path":"rooms/rm_level1/rm_level1.yy",},

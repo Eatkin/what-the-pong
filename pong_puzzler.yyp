@@ -90,6 +90,7 @@
     {"id":{"name":"obj_eyeball","path":"objects/obj_eyeball/obj_eyeball.yy",},},
     {"id":{"name":"scr_reset_text_alignment","path":"scripts/scr_reset_text_alignment/scr_reset_text_alignment.yy",},},
     {"id":{"name":"spr_pupil","path":"sprites/spr_pupil/spr_pupil.yy",},},
+    {"id":{"name":"rm_level12","path":"rooms/rm_level12/rm_level12.yy",},},
     {"id":{"name":"kim_lightyear_legends_109307","path":"sounds/kim_lightyear_legends_109307/kim_lightyear_legends_109307.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
@@ -113,6 +114,7 @@
     {"roomId":{"name":"rm_level9","path":"rooms/rm_level9/rm_level9.yy",},},
     {"roomId":{"name":"rm_level10","path":"rooms/rm_level10/rm_level10.yy",},},
     {"roomId":{"name":"rm_level11","path":"rooms/rm_level11/rm_level11.yy",},},
+    {"roomId":{"name":"rm_level12","path":"rooms/rm_level12/rm_level12.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

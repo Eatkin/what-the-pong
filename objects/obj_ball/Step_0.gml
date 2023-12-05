@@ -70,7 +70,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		xs = 2;
 		
 		// Check if the paddle is the player's paddle, and if so we do some property checks
-		if (paddle.object_index == obj_player_paddle.object_index)	{
+		if (paddle.object_index == asset_get_index(obj_player_paddle))	{
 			if (paddle.check_property(PlayerProperties.Shrinkray))	{
 				// Halve paddle size, don't go below 1 pixels
 				paddle.target_yscale = max(1/sprite_get_height(paddle.sprite_index), paddle.image_yscale * 0.5);

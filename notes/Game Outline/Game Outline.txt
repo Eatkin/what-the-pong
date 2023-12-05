@@ -18,5 +18,3 @@ Multiplyer
 Level 19 every time you hit the ball it multiplies
 Vertical
 Level 20 you're at the bottom of the screen and opponent is at the top
-Autopong
-Level 21 AI controls both paddles adn you do nothing
