@@ -17,6 +17,23 @@ function render_obj(obj)	{
 		}
 	}
 }
+function render_obj_noblend(obj)	{
+	for (var i = 0; i < instance_number(obj); i++)	{
+		var inst = instance_find(obj, i);
+		with (inst)	{
+			// Draw with the yoffset but if the yoffset variable doesn't exist it'll fall through
+			if (variable_instance_exists(id, "yoffset"))	{
+				var yy = y;
+				y = y - yoffset;
+				draw_self();
+				y = yy;
+			}
+			else	{
+				draw_self();
+			}
+		}
+	}
+}
 
 var mixed_colours;
 for (var i = 0; i < array_length(colours); i++)	{
@@ -38,10 +55,15 @@ surface_set_target(surf);
 draw_set_colour(c_black);
 draw_rectangle(0, 0, room_width + extend_bounds * 2, room_height + extend_bounds * 2, false);
 
+// Render any objects that are required to be cut out from the surface
 gpu_set_blendmode(bm_subtract);
 var objs = [obj_ball, par_paddle, obj_ball_trail, obj_magnet, obj_breakout_block, obj_net];
 array_foreach(objs, render_obj);
 gpu_set_blendmode(bm_normal);
+
+// Now render any objects that are drawn 'normally'
+objs = [obj_eyeball, obj_pupil];
+array_foreach(objs, render_obj_noblend);
 
 surface_reset_target();
 

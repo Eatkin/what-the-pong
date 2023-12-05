@@ -16,10 +16,6 @@ Menu screen:
 Custom cursor
 
 Pong Volleyball:
-Blocks should have eyes drawn on them that follow the ball
-	This requires an additional sstep to the rendering which will render things ontop of the cutaway
-Opponent paddle needs to be not retarded and be able to jump and it also needs physics setting up in the same way as the player physics
-Scoring is wrong, should happen when ball hits the ground not when ball hits the edges
 We also need to have an alternative scoreboard so it looks like slime volleyball
 
 

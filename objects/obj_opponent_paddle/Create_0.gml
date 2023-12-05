@@ -29,6 +29,8 @@ switch (room)	{
 		break;
 	case rm_level11:
 		apply_property(EnemyProperties.PongVolleyball);
+		var _eye = instance_create_layer(x, y, layer, obj_eyeball);
+		_eye.owner = id;
 		break;
 	default:
 		apply_property(EnemyProperties.VerticalMovement);

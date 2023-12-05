@@ -226,7 +226,7 @@ if (check_property(BallProperties.PongVolleyball))	{
 		while (place_meeting(x, y, par_paddle))	{
 			y--;
 			// Avoid infinite loop
-			yspeed = 5;
+			yspeed = 10;
 		}
 		
 		// Move to contact point with the paddle
@@ -280,6 +280,11 @@ if (check_property(BallProperties.PongVolleyball))	{
 		}
 		yspeed *= -1;
 		ys = 2;
+		
+		// Minimum yspeed
+		if (yspeed > -10)	{
+			yspeed = -10;
+		}
 		
 		var xx = x;
 		with (obj_level_manager)	{
