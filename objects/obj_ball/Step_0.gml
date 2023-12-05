@@ -122,6 +122,22 @@ if (check_property(BallProperties.NormalMovement))	{
 		ys = 2;
 		wall_collision = true;
 	}
+	
+	// Collide with the breakout blocks - keep it simple
+	if (place_meeting(x + xspeed, y, obj_breakout_block))	{
+		var _block = instance_place(x + xspeed, y, obj_breakout_block);
+		if (!_block.hit)	{
+			xspeed *= -1;
+		}
+		with (_block)	{
+			hit = true;
+		}
+		
+		paddle_collision = true;
+		
+		xs = 2;
+		ys = 2;
+	}
 }
 
 // Pong movement with gravity
@@ -189,6 +205,94 @@ if (check_property(BallProperties.Gravity))	{
 		yspeed *= -1;
 		ys = 2;
 	}
+}
+
+// Slime Volleyball style movement
+if (check_property(BallProperties.PongVolleyball))	{
+	var speedcap = 20;
+	yspeed += grav;
+	
+	// Collide with top/bottom of paddle
+	if (!place_meeting(x, y + yspeed, par_paddle))	{
+		y += yspeed;
+	}
+	else if (place_meeting(x, y + yspeed, obj_net))	{
+		yspeed *= -1;
+	}
+	else	{
+		paddle_collision = true;
+		ys = 2;
+		// Pop the ball out if we're actually inside the paddle
+		while (place_meeting(x, y, par_paddle))	{
+			y--;
+			// Avoid infinite loop
+			yspeed = 5;
+		}
+		
+		// Move to contact point with the paddle
+		while (!place_meeting(x, y + sign(yspeed), par_paddle))	{
+			y += sign(yspeed);
+		}
+		
+		// Now get the offset from the paddle
+		var _paddle = instance_place(x, y + sign(yspeed), par_paddle);
+		var _xoffset = x - _paddle.x;
+		var paddle_ys = _paddle.yspeed;
+		
+		// Deal with the xspeed
+		var x_strength = 4;			// Modifier to determine how fiercly to eject the ball to the side
+		xspeed += x_strength * maxspeed * _xoffset / sprite_get_height(spr_paddle);
+		
+		// Deal with the yspeed
+		yspeed *= -1;
+		// Add on any additional yspeed
+		if (sign(yspeed) == sign(paddle_ys))	{
+			var ys_multiplyer = 5;
+			yspeed = paddle_ys * ys_multiplyer;
+		}
+	}
+	
+	// Collide with the side of the paddle - we will just rebound with a little bit of impulse
+	if (!place_meeting(x + xspeed, y, par_paddle) and !place_meeting(x + xspeed, y, obj_net))	{
+		x += xspeed;
+	}
+	else	{
+		paddle_collision = true;
+		xspeed *= -1;
+		xs = 2;
+	}
+	
+	// Contact with room_boundaries
+	// Rebound left/right
+	if (bbox_left < 0 or bbox_right > room_width)	{
+		wall_collision = true;
+		xspeed *= -1;
+		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
+		xs = 2;
+	}
+	
+	// Finally bounce against the floor
+	if (bbox_bottom > room_height)	{
+		wall_collision = true;
+		// Move to contact point
+		while (bbox_bottom > room_height)	{
+			y -= 1;
+		}
+		yspeed *= -1;
+		ys = 2;
+		
+		var xx = x;
+		with (obj_level_manager)	{
+			if (xx < room_width * 0.5)
+				hit_left();
+			else
+				hit_right();
+		}
+	}
+	
+	// Clamp speeds
+	xspeed = clamp(xspeed, -speedcap, speedcap);
+	yspeed = clamp(yspeed, -speedcap, speedcap);
 }
 
 // Restore parameters

@@ -1,11 +1,7 @@
 Portal 3
 Level 5 it's pong, but portals open and close meaning the ball teleports around
-Attraction
-Level 8 it's pong, but there's a magnet moving up and down that disrupts the ball
-No AI
+No Intelligence
 Level 9 it's pong, but you control both paddles and have to survive
-Obstacle course
-Level 10 it's pong, but with a bunch of obstacles
 You are the ball
 Level 11 you are the ball - press up, down, left or right to change direction
 Hard to see
@@ -24,3 +20,5 @@ Multiplyer
 Level 19 every time you hit the ball it multiplies
 Vertical
 Level 20 you're at the bottom of the screen and opponent is at the top
+Autopong
+Level 21 AI controls both paddles adn you do nothing

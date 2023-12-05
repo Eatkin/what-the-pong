@@ -17,6 +17,7 @@ enum PlayerProperties {
 	VerticalMovement,
 	Shrinkray,
 	ReverseControls,
+	PongVolleyball,
 	Max
 }
 
@@ -44,6 +45,9 @@ switch (room)	{
 		apply_property(PlayerProperties.VerticalMovement);
 		apply_property(PlayerProperties.ReverseControls);
 		break;
+	case rm_level11:
+		apply_property(PlayerProperties.PongVolleyball);
+		break;
 	default:
 		apply_property(PlayerProperties.VerticalMovement);
 		break;
@@ -58,6 +62,10 @@ target_yspeed = 0;
 maxspeed = 10;
 y_accel_timer = 0;
 y_accel_step = 0.04;
+
+grav = 0.5;
+jump_height = 10;
+grounded = false;
 
 // Other shit
 if (check_property(PlayerProperties.Shrinkray))	{

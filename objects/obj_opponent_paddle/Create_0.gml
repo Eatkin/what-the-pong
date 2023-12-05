@@ -3,6 +3,7 @@ event_inherited();
 enum EnemyProperties {
 	VerticalMovement,
 	Gravity,
+	PongVolleyball,
 	Max
 }
 
@@ -26,6 +27,9 @@ switch (room)	{
 		apply_property(EnemyProperties.Gravity);
 		apply_property(EnemyProperties.VerticalMovement);
 		break;
+	case rm_level11:
+		apply_property(EnemyProperties.PongVolleyball);
+		break;
 	default:
 		apply_property(EnemyProperties.VerticalMovement);
 		break;
@@ -36,6 +40,10 @@ xspeed = 0;
 yspeed = 0;
 target_xspeed = 0;
 target_yspeed = 0;
+
+jump_height = 10;
+grav = 0.5;
+grounded = true;
 
 maxspeed = 10;
 y_accel_timer = 0;

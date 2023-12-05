@@ -28,6 +28,42 @@ if (check_property(PlayerProperties.VerticalMovement))	{
 	if (bbox_bottom > room_height or bbox_top < 0)
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
 }
+	
+// This is the slime volleyball level physics
+if (check_property(PlayerProperties.PongVolleyball))	{
+	var hinput = max(keyboard_check(Input.Right), keyboard_check(Input.AltRight)) - max(keyboard_check(Input.Left), keyboard_check(Input.AltLeft));
+	var jump = max(keyboard_check(Input.Up), keyboard_check(Input.AltUp));
+	
+	// Manage movement left right and jumping
+	if (jump and grounded)	{
+		yspeed = -jump_height;
+		grounded = false;
+	}
+	
+	var _hspeed = 10;
+	x += hinput * _hspeed;
+	
+	// Clamp x
+	while (bbox_right > room_width)	{
+		x--;
+	}
+	while (bbox_left < room_width * 0.5)	{
+		x++;
+	}
+	
+	// Move y-position
+	y += yspeed;
+	// Make sure we don't fall off the level
+	while (bbox_bottom >= room_height)	{
+		grounded = true;
+		yspeed = 0;
+		y--;
+	}
+	
+	if (!grounded)	{
+		yspeed += grav;
+	}
+}
 
 var stretch_strength = 0.02;	// Vertical scaling
 var squash_strength = 0.01;		// Horizontal scaling

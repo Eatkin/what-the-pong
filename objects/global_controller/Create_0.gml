@@ -22,4 +22,6 @@ global.level_titles[? rm_level5] = "Speedball";
 global.level_titles[? rm_level6] = "Shrinkray";
 global.level_titles[? rm_level7] = "Boss Fight";
 global.level_titles[? rm_level8] = "gnoP";
-global.level_titles[? rm_level9] = "Attraction";
+global.level_titles[? rm_level9] = "Befuddler";
+global.level_titles[? rm_level10] = "Ponkanoid";
+global.level_titles[? rm_level11] = "Pong Volleyball";

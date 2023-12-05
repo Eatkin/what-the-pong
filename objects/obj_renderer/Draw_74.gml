@@ -39,7 +39,7 @@ draw_set_colour(c_black);
 draw_rectangle(0, 0, room_width + extend_bounds * 2, room_height + extend_bounds * 2, false);
 
 gpu_set_blendmode(bm_subtract);
-var objs = [obj_ball, par_paddle, obj_ball_trail, obj_magnet];
+var objs = [obj_ball, par_paddle, obj_ball_trail, obj_magnet, obj_breakout_block, obj_net];
 array_foreach(objs, render_obj);
 gpu_set_blendmode(bm_normal);
 

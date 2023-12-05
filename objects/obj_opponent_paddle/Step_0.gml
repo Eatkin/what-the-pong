@@ -90,6 +90,53 @@ if (check_property(EnemyProperties.VerticalMovement))	{
 	
 }
 
+// Slime Volleyball level
+if (check_property(EnemyProperties.PongVolleyball))	{
+	lag_timer--;
+	
+	if (lag_timer == 0)	{
+		lag_timer = lag_timer_max;
+		x_pred = obj_ball.x + obj_ball.xspeed * lag_timer + irandom(x_fuzz) - x_fuzz * 0.5;
+	}
+	
+	// Move towards x_pred
+	var _hspeed = 10;
+	var threshold = _hspeed * 2;
+	if (abs(x - x_pred) < threshold)	{
+		xspeed = 0;
+	}
+	else	{
+		xspeed = _hspeed * sign(x_pred - x);
+	}
+	
+	// Now deal with jumping if the ball is above us
+	if (grounded and obj_ball.yspeed > 0 and abs(y - obj_ball.y) < 256 and obj_ball.x == clamp(obj_ball.x, bbox_left, bbox_right))	{
+		var roll = irandom(15);
+		if (roll == 0)	{
+			grounded = false;
+			yspeed = -jump_height;
+		}
+	}
+	
+	// Now deal with the movement itself
+	x += xspeed;
+	y += yspeed;
+	if (!grounded)
+		yspeed += grav;
+	
+	// Clamping
+	while (bbox_left < 0)	{
+		x++;
+	}
+	while (bbox_right > room_width * 0.5)	{
+		x--;
+	}
+	while (bbox_bottom > room_height)	{
+		y--;
+		grounded = true;
+	}
+}
+
 var stretch_strength = 0.02;	// Vertical scaling
 var squash_strength = 0.01;		// Horizontal scaling
 var dy = abs(y - yprevious);
