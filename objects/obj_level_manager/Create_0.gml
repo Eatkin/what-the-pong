@@ -2,6 +2,7 @@ enum ScoreboardStyle {
 	PlayerOpponent,
 	PlayerOnly,
 	PlayerCountdown,
+	SlimeVolleyball,
 }
 
 level_ended = false;
@@ -32,6 +33,12 @@ function create_text_particle(xx, yy, txt)	{
 	instance_create_layer(xx, yy, layer, obj_text_particle, vars);
 }
 
+function create_particle(xx, yy, sprite, img_index)	{
+	var _part = instance_create_layer(xx, yy, layer, obj_sprite_particle);
+	_part.sprite_index = sprite;
+	_part.image_index = img_index;
+}
+
 function easeInElastic(t) {
 	var c4 = (2 * pi) / 3;
 	return (t == 0) ? 0 : ((t == 1) ? 1 :  -power(2, 10 * t - 10) * sin((t * 10 - 10.75) * c4));
@@ -49,6 +56,14 @@ function hit_left()	{
 		case rm_level2:
 			opponent_score++;
 			snd = snd_opponent_score;
+			break;
+			
+		case rm_level11:
+			player_score++;
+			timer = 0.9;
+			snd = snd_score;
+			var xx = room_width * 0.75 + slime_x_offset + slime_spacing * (player_score - 1);
+			create_particle(xx, y_centre, spr_slimevolley_score, 1);
 			break;
 			
 		default:
@@ -75,6 +90,14 @@ function hit_right()	{
 			player_score_scale = 2;
 			timer = 0.9;
 			snd = snd_score;
+			break;
+			
+		case rm_level11:
+			opponent_score++
+			timer = 0.9;
+			snd = snd_opponent_score;
+			var xx = room_width * 0.25 + slime_x_offset + slime_spacing * (player_score - 1);
+			create_particle(xx, y_centre, spr_slimevolley_score, 1);
 			break;
 			
 		default:
@@ -110,6 +133,10 @@ switch (room)	{
 		scoreboard_style = ScoreboardStyle.PlayerCountdown;
 		target_score = 5;
 		break;
+	case rm_level11:
+		scoreboard_style = ScoreboardStyle.SlimeVolleyball;
+		target_score = 5;
+		break;
 	default:
 		scoreboard_style = ScoreboardStyle.PlayerOpponent;
 		break;
@@ -121,3 +148,7 @@ scoreboard_yoffset_start = 2 * y_centre;
 scoreboard_yoffset = scoreboard_yoffset_start;
 timer = 1;
 timer_step = 1 / room_speed;
+
+// Define some coordinates for the slime volleyball style scoreboard
+slime_spacing = 12 + sprite_get_width(spr_slimevolley_score);
+slime_x_offset = -slime_spacing * 2;

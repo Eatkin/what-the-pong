@@ -128,7 +128,7 @@ if (check_property(EnemyProperties.PongVolleyball))	{
 	while (bbox_left < 0)	{
 		x++;
 	}
-	while (bbox_right > room_width * 0.5)	{
+	while (bbox_right > room_width * 0.5 - 8)	{
 		x--;
 	}
 	while (bbox_bottom > room_height)	{

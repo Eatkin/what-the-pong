@@ -10,8 +10,6 @@ N Pongism
 Level 14 a thing spins around and randomly shoots balls and you have to defend your goal like N Ballism
 Magnets 2 
 Level 15 it's pong, but the paddles are repellant magnets instead of paddles
-Pong Volleyball
-Level 16 it's pong but slime volleyball
 Tradeoff
 Level 17 you can shoot balls as much as you'd like but that means there's more balls to deal with
 Cross the line

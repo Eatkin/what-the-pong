@@ -24,8 +24,10 @@
   "ResourceOrderSettings": [
     {"name":"obj_breakout_manager","order":4,"path":"objects/obj_breakout_manager/obj_breakout_manager.yy",},
     {"name":"obj_music","order":3,"path":"objects/obj_music/obj_music.yy",},
+    {"name":"spr_slimevolley_score","order":5,"path":"sprites/spr_slimevolley_score/spr_slimevolley_score.yy",},
     {"name":"rm_level6","order":6,"path":"rooms/rm_level6/rm_level6.yy",},
     {"name":"scr_resize","order":2,"path":"scripts/scr_resize/scr_resize.yy",},
+    {"name":"obj_sprite_particle","order":4,"path":"objects/obj_sprite_particle/obj_sprite_particle.yy",},
     {"name":"spr_ball","order":1,"path":"sprites/spr_ball/spr_ball.yy",},
     {"name":"snd_opponent_score","order":9,"path":"sounds/snd_opponent_score/snd_opponent_score.yy",},
     {"name":"rm_level7","order":7,"path":"rooms/rm_level7/rm_level7.yy",},

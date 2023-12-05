@@ -47,14 +47,14 @@ if (check_property(PlayerProperties.PongVolleyball))	{
 	while (bbox_right > room_width)	{
 		x--;
 	}
-	while (bbox_left < room_width * 0.5)	{
+	while (bbox_left < room_width * 0.5 + 8)	{
 		x++;
 	}
 	
 	// Move y-position
 	y += yspeed;
 	// Make sure we don't fall off the level
-	while (bbox_bottom >= room_height)	{
+	while (bbox_bottom > room_height)	{
 		grounded = true;
 		yspeed = 0;
 		y--;

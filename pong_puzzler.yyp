@@ -41,9 +41,11 @@
   "resources": [
     {"id":{"name":"obj_breakout_manager","path":"objects/obj_breakout_manager/obj_breakout_manager.yy",},},
     {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
+    {"id":{"name":"spr_slimevolley_score","path":"sprites/spr_slimevolley_score/spr_slimevolley_score.yy",},},
     {"id":{"name":"HideScrollbar","path":"extensions/HideScrollbar/HideScrollbar.yy",},},
     {"id":{"name":"rm_level6","path":"rooms/rm_level6/rm_level6.yy",},},
     {"id":{"name":"scr_resize","path":"scripts/scr_resize/scr_resize.yy",},},
+    {"id":{"name":"obj_sprite_particle","path":"objects/obj_sprite_particle/obj_sprite_particle.yy",},},
     {"id":{"name":"obj_level_title","path":"objects/obj_level_title/obj_level_title.yy",},},
     {"id":{"name":"chiptune_grooving_142242","path":"sounds/chiptune_grooving_142242/chiptune_grooving_142242.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},

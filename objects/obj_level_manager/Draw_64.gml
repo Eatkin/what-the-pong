@@ -22,5 +22,16 @@ else if (scoreboard_style == ScoreboardStyle.PlayerCountdown)	{
 	score_text = string(target_score - player_score);
 	draw_text_transformed(x_centre, yy, score_text, player_score_scale, player_score_scale, 0);
 }
+else if (scoreboard_style == ScoreboardStyle.SlimeVolleyball)	{
+	// Draw the opponents score
+	var xx_opp = room_width * 0.25 + slime_x_offset;
+	var xx_play = room_width * 0.75 + slime_x_offset;
+	for (var i = 0; i < target_score; i++)	{
+		var img_index = opponent_score > i;
+		draw_sprite(spr_slimevolley_score, img_index, xx_opp + slime_spacing * i, yy);
+		var img_index = player_score > i;
+		draw_sprite(spr_slimevolley_score, img_index, xx_play + slime_spacing * i, yy);
+	}
+}
 
 scr_reset_text_alignment();
