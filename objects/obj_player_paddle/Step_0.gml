@@ -83,3 +83,7 @@ else	{
 	var _tyx = 1 - squash_strength * dy;
 	image_xscale = lerp(image_xscale, _tyx, 0.5);
 }
+
+if (check_property(PlayerProperties.HardToSee))	{
+	image_alpha = 1 - abs(yspeed)/maxspeed;
+}

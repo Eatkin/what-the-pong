@@ -147,3 +147,7 @@ var _tys = y_scale * (1 + stretch_strength * dy);
 image_yscale = lerp(image_yscale, _tys, 0.5);
 var _tyx = x_scale * (1 - squash_strength * dy);
 image_xscale = lerp(image_xscale, _tyx, 0.5);
+
+if (check_property(EnemyProperties.HardToSee))	{
+	image_alpha = 1 - abs(yspeed)/maxspeed;
+}

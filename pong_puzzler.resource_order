@@ -29,6 +29,7 @@
     {"name":"scr_resize","order":2,"path":"scripts/scr_resize/scr_resize.yy",},
     {"name":"rm_level13","order":13,"path":"rooms/rm_level13/rm_level13.yy",},
     {"name":"obj_sprite_particle","order":4,"path":"objects/obj_sprite_particle/obj_sprite_particle.yy",},
+    {"name":"rm_level16","order":16,"path":"rooms/rm_level16/rm_level16.yy",},
     {"name":"spr_ball","order":1,"path":"sprites/spr_ball/spr_ball.yy",},
     {"name":"snd_opponent_score","order":9,"path":"sounds/snd_opponent_score/snd_opponent_score.yy",},
     {"name":"rm_level7","order":7,"path":"rooms/rm_level7/rm_level7.yy",},

@@ -1,7 +1,5 @@
 Portal 3
 Level 5 it's pong, but portals open and close meaning the ball teleports around
-Hard to see
-Level 13 it's pong, but when you move your paddle fades away
 N Pongism
 Level 14 a thing spins around and randomly shoots balls and you have to defend your goal like N Ballism
 Magnets 2 

@@ -6,6 +6,7 @@ enum EnemyProperties {
 	PongVolleyball,
 	DoubleHeight,
 	DontBecomeStupider,
+	HardToSee,
 	Max
 }
 
@@ -38,6 +39,10 @@ switch (room)	{
 		apply_property(EnemyProperties.VerticalMovement);
 		apply_property(EnemyProperties.DoubleHeight);
 		apply_property(EnemyProperties.DontBecomeStupider);
+		break;
+	case rm_level16:
+		apply_property(EnemyProperties.VerticalMovement);
+		apply_property(EnemyProperties.HardToSee);
 		break;
 	default:
 		apply_property(EnemyProperties.VerticalMovement);

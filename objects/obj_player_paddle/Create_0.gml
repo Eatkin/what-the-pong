@@ -19,6 +19,7 @@ enum PlayerProperties {
 	ReverseControls,
 	PongVolleyball,
 	DoubleHeight,
+	HardToSee,
 	Max
 }
 
@@ -54,6 +55,10 @@ switch (room)	{
 	case rm_level15:
 		apply_property(PlayerProperties.VerticalMovement);
 		apply_property(PlayerProperties.DoubleHeight);
+		break;
+	case rm_level16:
+		apply_property(PlayerProperties.VerticalMovement);
+		apply_property(PlayerProperties.HardToSee);
 		break;
 	default:
 		apply_property(PlayerProperties.VerticalMovement);
