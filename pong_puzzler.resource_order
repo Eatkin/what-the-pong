@@ -57,6 +57,7 @@
     {"name":"rm_level11","order":11,"path":"rooms/rm_level11/rm_level11.yy",},
     {"name":"scr_fullscreen","order":1,"path":"scripts/scr_fullscreen/scr_fullscreen.yy",},
     {"name":"obj_net","order":7,"path":"objects/obj_net/obj_net.yy",},
+    {"name":"rm_level15","order":15,"path":"rooms/rm_level15/rm_level15.yy",},
     {"name":"par_paddle","order":2,"path":"objects/par_paddle/par_paddle.yy",},
     {"name":"snd_win","order":8,"path":"sounds/snd_win/snd_win.yy",},
     {"name":"obj_opponent_paddle","order":3,"path":"objects/obj_opponent_paddle/obj_opponent_paddle.yy",},

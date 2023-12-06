@@ -82,6 +82,7 @@
     {"id":{"name":"scr_fullscreen","path":"scripts/scr_fullscreen/scr_fullscreen.yy",},},
     {"id":{"name":"snd_lose","path":"sounds/snd_lose/snd_lose.yy",},},
     {"id":{"name":"obj_net","path":"objects/obj_net/obj_net.yy",},},
+    {"id":{"name":"rm_level15","path":"rooms/rm_level15/rm_level15.yy",},},
     {"id":{"name":"par_paddle","path":"objects/par_paddle/par_paddle.yy",},},
     {"id":{"name":"snd_win","path":"sounds/snd_win/snd_win.yy",},},
     {"id":{"name":"obj_opponent_paddle","path":"objects/obj_opponent_paddle/obj_opponent_paddle.yy",},},
@@ -119,6 +120,7 @@
     {"roomId":{"name":"rm_level12","path":"rooms/rm_level12/rm_level12.yy",},},
     {"roomId":{"name":"rm_level13","path":"rooms/rm_level13/rm_level13.yy",},},
     {"roomId":{"name":"rm_level14","path":"rooms/rm_level14/rm_level14.yy",},},
+    {"roomId":{"name":"rm_level15","path":"rooms/rm_level15/rm_level15.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

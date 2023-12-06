@@ -4,6 +4,8 @@ enum EnemyProperties {
 	VerticalMovement,
 	Gravity,
 	PongVolleyball,
+	DoubleHeight,
+	DontBecomeStupider,
 	Max
 }
 
@@ -31,6 +33,11 @@ switch (room)	{
 		apply_property(EnemyProperties.PongVolleyball);
 		var _eye = instance_create_layer(x, y, layer, obj_eyeball);
 		_eye.owner = id;
+		break;
+	case rm_level15:
+		apply_property(EnemyProperties.VerticalMovement);
+		apply_property(EnemyProperties.DoubleHeight);
+		apply_property(EnemyProperties.DontBecomeStupider);
 		break;
 	default:
 		apply_property(EnemyProperties.VerticalMovement);
@@ -82,4 +89,8 @@ if (room == rm_level7)	{
 	y_scale = _scale;
 	lag_timer_max = room_speed * 0.1;
 	y_fuzz = 0;
+}
+
+if (check_property(EnemyProperties.DoubleHeight))	{
+	y_scale = 2;
 }

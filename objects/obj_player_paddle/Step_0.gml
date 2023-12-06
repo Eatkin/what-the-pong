@@ -68,7 +68,7 @@ if (check_property(PlayerProperties.PongVolleyball))	{
 var stretch_strength = 0.02;	// Vertical scaling
 var squash_strength = 0.01;		// Horizontal scaling
 var dy = abs(y - yprevious);
-if (check_property(PlayerProperties.Shrinkray))	{
+if (check_property(PlayerProperties.Shrinkray) or check_property(PlayerProperties.DoubleHeight))	{
 	// Deal with stretching from movement
 	var _tys = target_yscale;
 	_tys += stretch_strength * dy;

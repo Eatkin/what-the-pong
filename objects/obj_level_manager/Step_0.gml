@@ -44,6 +44,12 @@ switch (room)	{
 		if (countdown_timer < 0)
 			level_end(true);
 		break;
+	case rm_level15:
+		if (player_score > 128)
+			level_end(true);
+		if (opponent_score > 150)
+			level_end(false);
+		break;
 	default:
 		if (player_score > 3)
 			level_end(true);

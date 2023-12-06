@@ -24,7 +24,7 @@ var wall_collision = false;
 if (check_property(BallProperties.NormalMovement))	{
 	// Movement with collision with paddles and also the room boundaries
 	// First check the collision with the paddles because it's a bit more involved
-	if (!place_meeting(x + xspeed, y, par_paddle))	{
+	if (collision_line(x, y, x + xspeed, y, par_paddle, false, true) == noone)	{
 		x += xspeed;
 	}
 	else	{
@@ -81,7 +81,7 @@ if (check_property(BallProperties.NormalMovement))	{
 	}
 
 	// Collisions with top/bottom of paddle (it's basically the same as above but simpler)
-	if (!place_meeting(x, y + yspeed, par_paddle))	{
+	if (collision_line(x, y, x, y + yspeed, par_paddle, false, true) == noone)	{
 		y += yspeed;
 	}
 	else	{
@@ -110,6 +110,11 @@ if (check_property(BallProperties.NormalMovement))	{
 				hit_left();
 			else
 				hit_right();
+		}
+		
+		// Destroy if the destroy property is on
+		if (check_property(BallProperties.DestroyOnWall) and instance_number(obj_ball) > 1)	{
+			instance_destroy();
 		}
 		
 		wall_collision = true;
@@ -338,8 +343,15 @@ if (wall_collision or paddle_collision)	{
 }
 
 if (paddle_collision)	{
-	// Probbably want some particles or something or nothing instead lol
-	// Because I already handles this in the shittest way possible
+	if (check_property(BallProperties.Multiplyer))	{
+		var ball_cap = 100;
+		if (instance_number(obj_ball) < ball_cap)	{
+			var _ball = instance_create_layer(x, y, layer, obj_ball);
+			_ball.xspeed = xspeed;
+			_ball.yspeed = -yspeed;
+			_ball.yoffset = 0;
+		}
+	}
 }
 
 // Create the trail effect

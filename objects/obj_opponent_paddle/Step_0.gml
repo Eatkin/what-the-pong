@@ -44,8 +44,10 @@ if (check_property(EnemyProperties.VerticalMovement))	{
 	// Update position predictions if lag_timer is 0
 	if (lag_timer == 0)	{
 		// Increase fuzz
-		x_fuzz++;
-		y_fuzz++;
+		if (!check_property(EnemyProperties.DontBecomeStupider))	{
+			x_fuzz++;
+			y_fuzz++;
+		}
 		
 		// Find the nearest ball that is moving towards us otherwise just default to the nearest ball
 		var _ball = instance_nearest(x, y, obj_ball);

@@ -6,6 +6,8 @@ enum BallProperties {
 	Magnet,
 	PongVolleyball,
 	YoureBall,
+	Multiplyer,
+	DestroyOnWall,
 	Max
 }
 
@@ -73,6 +75,11 @@ switch (room)	{
 		apply_property(BallProperties.Accelerate);
 		acceleration_strength = 1.0011;
 		break;
+	case rm_level15:
+		apply_property(BallProperties.Multiplyer);
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.DestroyOnWall);
+		break;
 	default:
 		apply_property(BallProperties.NormalMovement);
 		break;
@@ -87,7 +94,7 @@ if (room == rm_level11)	{
 }
 
 // Make sure we can't just not move on this level
-if (room == rm_level14)	{
+if (room == rm_level14 or room == rm_level15)	{
 	yspeed = choose(1, -1);
 }
 

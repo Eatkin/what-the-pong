@@ -18,6 +18,7 @@ enum PlayerProperties {
 	Shrinkray,
 	ReverseControls,
 	PongVolleyball,
+	DoubleHeight,
 	Max
 }
 
@@ -50,6 +51,10 @@ switch (room)	{
 		var _eye = instance_create_layer(x, y, layer, obj_eyeball);
 		_eye.owner = id;
 		break;
+	case rm_level15:
+		apply_property(PlayerProperties.VerticalMovement);
+		apply_property(PlayerProperties.DoubleHeight);
+		break;
 	default:
 		apply_property(PlayerProperties.VerticalMovement);
 		break;
@@ -76,3 +81,7 @@ if (check_property(PlayerProperties.Shrinkray))	{
 }
 
 target_yscale = image_yscale;
+
+if (check_property(PlayerProperties.DoubleHeight))	{
+	target_yscale = 2;
+}
