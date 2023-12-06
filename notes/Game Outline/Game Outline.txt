@@ -1,7 +1,5 @@
 Portal 3
 Level 5 it's pong, but portals open and close meaning the ball teleports around
-No Intelligence
-Level 9 it's pong, but you control both paddles and have to survive
 Hard to see
 Level 13 it's pong, but when you move your paddle fades away
 N Pongism

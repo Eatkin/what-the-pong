@@ -30,6 +30,8 @@ xspeed = maxspeed;
 yspeed = 0;
 grav = 0.5;
 
+acceleration_strength = 1;
+
 properties = 0;
 
 yoffset = room_height * (0.5 + random(0.5));
@@ -53,6 +55,7 @@ switch (room)	{
 	case rm_level7:
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.Accelerate);
+		acceleration_strength = 1.0002;
 		break;
 	case rm_level9:
 		apply_property(BallProperties.NormalMovement);
@@ -65,6 +68,11 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.YoureBall);
 		break;
+	case rm_level14:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.Accelerate);
+		acceleration_strength = 1.0011;
+		break;
 	default:
 		apply_property(BallProperties.NormalMovement);
 		break;
@@ -76,6 +84,11 @@ if (room == rm_level6)	{
 
 if (room == rm_level11)	{
 	xspeed = 0;
+}
+
+// Make sure we can't just not move on this level
+if (room == rm_level14)	{
+	yspeed = choose(1, -1);
 }
 
 scale = 1;

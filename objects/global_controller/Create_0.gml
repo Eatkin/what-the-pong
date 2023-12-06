@@ -27,3 +27,4 @@ global.level_titles[? rm_level10] = "Ponkanoid";
 global.level_titles[? rm_level11] = "Pong Volleyball";
 global.level_titles[? rm_level12] = "Autopong";
 global.level_titles[? rm_level13] = "You're Ball";
+global.level_titles[? rm_level14] = "No Intelligence";

@@ -70,7 +70,7 @@ if (check_property(BallProperties.NormalMovement))	{
 		xs = 2;
 		
 		// Check if the paddle is the player's paddle, and if so we do some property checks
-		if (paddle.object_index == asset_get_index(obj_player_paddle))	{
+		if (instance_exists(obj_player_paddle) and paddle.object_index == obj_player_paddle.object_index)	{
 			if (paddle.check_property(PlayerProperties.Shrinkray))	{
 				// Halve paddle size, don't go below 1 pixels
 				paddle.target_yscale = max(1/sprite_get_height(paddle.sprite_index), paddle.image_yscale * 0.5);
@@ -352,7 +352,7 @@ instance_create_layer(x, y, layer, obj_ball_trail, _vars);
 
 // Accelerate during boss fight
 if (check_property(BallProperties.Accelerate))	{
-	maxspeed *= 1.0002;
+	maxspeed *= acceleration_strength;
 }
 
 // Be attracted to the magnet in the y-plane

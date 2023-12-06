@@ -99,6 +99,7 @@
     {"id":{"name":"snd_ballhit1","path":"sounds/snd_ballhit1/snd_ballhit1.yy",},},
     {"id":{"name":"global_controller","path":"objects/global_controller/global_controller.yy",},},
     {"id":{"name":"_8_bit_air_fight_158813","path":"sounds/_8_bit_air_fight_158813/_8_bit_air_fight_158813.yy",},},
+    {"id":{"name":"rm_level14","path":"rooms/rm_level14/rm_level14.yy",},},
     {"id":{"name":"rm_level3","path":"rooms/rm_level3/rm_level3.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
@@ -117,6 +118,7 @@
     {"roomId":{"name":"rm_level11","path":"rooms/rm_level11/rm_level11.yy",},},
     {"roomId":{"name":"rm_level12","path":"rooms/rm_level12/rm_level12.yy",},},
     {"roomId":{"name":"rm_level13","path":"rooms/rm_level13/rm_level13.yy",},},
+    {"roomId":{"name":"rm_level14","path":"rooms/rm_level14/rm_level14.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

@@ -71,6 +71,7 @@
     {"name":"obj_pupil","order":3,"path":"objects/obj_pupil/obj_pupil.yy",},
     {"name":"snd_ballhit1","order":1,"path":"sounds/snd_ballhit1/snd_ballhit1.yy",},
     {"name":"_8_bit_air_fight_158813","order":1,"path":"sounds/_8_bit_air_fight_158813/_8_bit_air_fight_158813.yy",},
+    {"name":"rm_level14","order":14,"path":"rooms/rm_level14/rm_level14.yy",},
     {"name":"rm_level3","order":3,"path":"rooms/rm_level3/rm_level3.yy",},
   ],
 }

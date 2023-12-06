@@ -33,5 +33,9 @@ else if (scoreboard_style == ScoreboardStyle.SlimeVolleyball)	{
 		draw_sprite(spr_slimevolley_score, img_index, xx_play + slime_spacing * i, yy);
 	}
 }
+else if (scoreboard_style == ScoreboardStyle.Countdown)	{
+	score_text = string(max(0, countdown_timer));
+	draw_text_transformed(x_centre, yy, score_text, player_score_scale, player_score_scale, 0);
+}
 
 scr_reset_text_alignment();

@@ -3,6 +3,7 @@ enum ScoreboardStyle {
 	PlayerOnly,
 	PlayerCountdown,
 	SlimeVolleyball,
+	Countdown,
 }
 
 level_ended = false;
@@ -54,6 +55,7 @@ function hit_left()	{
 	
 	switch (room)	{			
 		case rm_level2:
+		case rm_level14:
 			opponent_score++;
 			snd = snd_opponent_score;
 			break;
@@ -100,6 +102,11 @@ function hit_right()	{
 			create_particle(xx, y_centre, spr_slimevolley_score, 1);
 			break;
 			
+		case rm_level14:
+			opponent_score++;
+			snd = snd_opponent_score;
+			break;
+			
 		default:
 			create_text_particle(x_centre - x_shift, y_centre, string(opponent_score));
 			opponent_score++;
@@ -137,6 +144,9 @@ switch (room)	{
 		scoreboard_style = ScoreboardStyle.SlimeVolleyball;
 		target_score = 5;
 		break;
+	case rm_level14:
+		scoreboard_style = ScoreboardStyle.Countdown;
+		break;
 	default:
 		scoreboard_style = ScoreboardStyle.PlayerOpponent;
 		break;
@@ -152,3 +162,7 @@ timer_step = 1 / room_speed;
 // Define some coordinates for the slime volleyball style scoreboard
 slime_spacing = 12 + sprite_get_width(spr_slimevolley_score);
 slime_x_offset = -slime_spacing * 2;
+
+// This is for survival levels
+countdown_timer = 10;
+countdown_ticks = room_speed;
