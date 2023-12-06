@@ -5,6 +5,7 @@ enum BallProperties {
 	Accelerate,
 	Magnet,
 	PongVolleyball,
+	YoureBall,
 	Max
 }
 
@@ -59,6 +60,10 @@ switch (room)	{
 		break;
 	case rm_level11:
 		apply_property(BallProperties.PongVolleyball);
+		break;
+	case rm_level13:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.YoureBall);
 		break;
 	default:
 		apply_property(BallProperties.NormalMovement);

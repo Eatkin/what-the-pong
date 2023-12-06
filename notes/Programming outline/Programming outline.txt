@@ -15,9 +15,6 @@ Menu screen:
 	
 Custom cursor
 
-Pong Volleyball:
-We also need to have an alternative scoreboard so it looks like slime volleyball
-
 
 Ball can phase through paddles (particularly in speedball)
 I need to change the main logic so that it loops always

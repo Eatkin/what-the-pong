@@ -45,6 +45,7 @@
     {"id":{"name":"HideScrollbar","path":"extensions/HideScrollbar/HideScrollbar.yy",},},
     {"id":{"name":"rm_level6","path":"rooms/rm_level6/rm_level6.yy",},},
     {"id":{"name":"scr_resize","path":"scripts/scr_resize/scr_resize.yy",},},
+    {"id":{"name":"rm_level13","path":"rooms/rm_level13/rm_level13.yy",},},
     {"id":{"name":"obj_sprite_particle","path":"objects/obj_sprite_particle/obj_sprite_particle.yy",},},
     {"id":{"name":"obj_level_title","path":"objects/obj_level_title/obj_level_title.yy",},},
     {"id":{"name":"chiptune_grooving_142242","path":"sounds/chiptune_grooving_142242/chiptune_grooving_142242.yy",},},
@@ -115,6 +116,7 @@
     {"roomId":{"name":"rm_level10","path":"rooms/rm_level10/rm_level10.yy",},},
     {"roomId":{"name":"rm_level11","path":"rooms/rm_level11/rm_level11.yy",},},
     {"roomId":{"name":"rm_level12","path":"rooms/rm_level12/rm_level12.yy",},},
+    {"roomId":{"name":"rm_level13","path":"rooms/rm_level13/rm_level13.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

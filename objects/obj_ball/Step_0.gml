@@ -385,3 +385,14 @@ if (check_property(BallProperties.Magnet))	{
 		yspeed = -maxspeed * dsin(angle);
 	}
 }
+
+// Player controls for the You're Ball level
+if (check_property(BallProperties.YoureBall))	{
+	var hinput = max(keyboard_check(Input.Right), keyboard_check(Input.AltRight)) - max(keyboard_check(Input.Left), keyboard_check(Input.AltLeft));
+	var vinput = max(keyboard_check(Input.Down), keyboard_check(Input.AltDown)) - max(keyboard_check(Input.Up), keyboard_check(Input.AltUp));
+	
+	if (hinput != 0)
+		xspeed = hinput * abs(xspeed);
+	if (vinput != 0)
+		yspeed = vinput * abs(yspeed);
+}
