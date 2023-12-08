@@ -30,3 +30,6 @@ global.level_titles[? rm_level13] = "You're Ball";
 global.level_titles[? rm_level14] = "No Intelligence";
 global.level_titles[? rm_level15] = "Antiparticle";
 global.level_titles[? rm_level16] = "Hard to See";
+global.level_titles[? rm_level17] = "Tradeoff";
+global.level_titles[? rm_level18] = "Cross the Line";
+global.level_titles[? rm_level19] = "Cat";

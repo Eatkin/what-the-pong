@@ -28,6 +28,27 @@ if (check_property(PlayerProperties.VerticalMovement))	{
 	if (bbox_bottom > room_height or bbox_top < 0)
 		y = clamp(y, sprite_height * 0.5, room_height - sprite_height * 0.5);
 }
+
+if (check_property(PlayerProperties.HorizontalMovement))	{
+	var hinput = max(keyboard_check(Input.Right), keyboard_check(Input.AltRight)) - max(keyboard_check(Input.Left), keyboard_check(Input.AltLeft));
+	var target_xs = hinput * maxspeed;
+	// Check if target_ys has changed because if it has we need to change our easing timer
+	if (target_xs != target_xspeed)
+		x_accel_timer = 0;
+		
+	target_xspeed = target_xs;
+	
+	// Now we begin the easing towards our target speed
+	x_accel_timer += x_accel_step;
+	x_accel_timer = clamp(x_accel_timer, 0, 1);
+	xspeed = target_xspeed * quint_out(x_accel_timer);
+	
+	// Move with collisions and whatever, account for room boundaries
+	// No collision at the moment so just make sure we don't exceed room boundaries
+	x += xspeed;
+	if (bbox_right > room_width or bbox_left < 0)
+		x = clamp(x, sprite_width * 0.5, room_width - sprite_width * 0.5);
+}
 	
 // This is the slime volleyball level physics
 if (check_property(PlayerProperties.PongVolleyball))	{
@@ -86,4 +107,29 @@ else	{
 
 if (check_property(PlayerProperties.HardToSee))	{
 	image_alpha = 1 - abs(yspeed)/maxspeed;
+}
+
+if (check_property(PlayerProperties.ShootBalls))	{
+	shoot_balls_timer--;
+	
+	if (shoot_balls_timer == 0)	{
+		shoot_balls_timer = shoot_balls_timer_max;
+		var _ball = instance_create_layer(bbox_left - 4, y, layer, obj_ball);
+		_ball.xspeed *= -1;		// Normally moves right so flip it
+		_ball.yoffset = 0;
+		
+		var snd = snd_ballhit1;
+		var pitch = 0.95 + random(0.1);
+		audio_play_sound(snd, 0, false, 1, 0, pitch);
+	}
+}
+
+if (check_property(PlayerProperties.CrossTheLine))	{
+	x -= x_movement_rate;
+	if (bbox_right < obj_line.x)	{
+		with (obj_level_manager)
+			player_score++;
+		var pitch = 0.95 + random(0.1);
+		audio_play_sound(snd_score, 0, false, 1, 0, pitch);
+	}
 }

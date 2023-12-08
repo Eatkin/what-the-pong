@@ -80,6 +80,10 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.DestroyOnWall);
 		break;
+	case rm_level17:
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.DestroyOnWall);
+		break;
 	default:
 		apply_property(BallProperties.NormalMovement);
 		break;
@@ -94,7 +98,7 @@ if (room == rm_level11)	{
 }
 
 // Make sure we can't just not move on this level
-if (room == rm_level14 or room == rm_level15)	{
+if (room == rm_level14 or room == rm_level15 or room == rm_level18)	{
 	yspeed = choose(1, -1);
 }
 

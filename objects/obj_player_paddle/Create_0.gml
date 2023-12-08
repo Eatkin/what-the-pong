@@ -20,6 +20,9 @@ enum PlayerProperties {
 	PongVolleyball,
 	DoubleHeight,
 	HardToSee,
+	ShootBalls,
+	HorizontalMovement,
+	CrossTheLine,
 	Max
 }
 
@@ -60,6 +63,14 @@ switch (room)	{
 		apply_property(PlayerProperties.VerticalMovement);
 		apply_property(PlayerProperties.HardToSee);
 		break;
+	case rm_level17:
+		apply_property(PlayerProperties.VerticalMovement);
+		apply_property(PlayerProperties.ShootBalls);
+		break;
+	case rm_level18:
+		apply_property(PlayerProperties.VerticalMovement);
+		apply_property(PlayerProperties.CrossTheLine);
+		break;
 	default:
 		apply_property(PlayerProperties.VerticalMovement);
 		break;
@@ -72,12 +83,22 @@ target_xspeed = 0;
 target_yspeed = 0;
 
 maxspeed = 10;
+x_accel_timer = 0;
+x_accel_step = 0.04;
 y_accel_timer = 0;
 y_accel_step = 0.04;
 
+// Slime volleyball physics
 grav = 0.5;
 jump_height = 10;
 grounded = false;
+
+// Cross the line level
+x_movement_rate = 1;
+
+// Shoot balls timer
+shoot_balls_timer_max = room_speed;
+shoot_balls_timer = shoot_balls_timer_max;
 
 // Other shit
 if (check_property(PlayerProperties.Shrinkray))	{

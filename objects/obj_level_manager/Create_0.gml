@@ -4,6 +4,7 @@ enum ScoreboardStyle {
 	PlayerCountdown,
 	SlimeVolleyball,
 	Countdown,
+	None,
 }
 
 level_ended = false;
@@ -68,6 +69,10 @@ function hit_left()	{
 			create_particle(xx, y_centre, spr_slimevolley_score, 1);
 			break;
 			
+		case rm_level18:
+			// Do nothing
+			break;
+			
 		default:
 			create_text_particle(x_centre + x_shift, y_centre, string(player_score));
 			player_score++;
@@ -103,6 +108,7 @@ function hit_right()	{
 			break;
 			
 		case rm_level14:
+		case rm_level18:
 			opponent_score++;
 			snd = snd_opponent_score;
 			break;
@@ -146,6 +152,9 @@ switch (room)	{
 		break;
 	case rm_level14:
 		scoreboard_style = ScoreboardStyle.Countdown;
+		break;
+	case rm_level18:
+		scoreboard_style = ScoreboardStyle.None;
 		break;
 	default:
 		scoreboard_style = ScoreboardStyle.PlayerOpponent;

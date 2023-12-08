@@ -4,8 +4,6 @@ N Pongism
 Level 14 a thing spins around and randomly shoots balls and you have to defend your goal like N Ballism
 Magnets 2 
 Level 15 it's pong, but the paddles are repellant magnets instead of paddles
-Tradeoff
-Level 17 you intermittently shoot balls but that means there's more balls to deal with
 Cross the line
 Level 18 you have to move horizontally slowly to get across a vertical line so difficulty increases as you approach it
 Vertical

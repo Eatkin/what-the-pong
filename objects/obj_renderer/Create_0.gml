@@ -1,4 +1,4 @@
-extend_bounds = 10; // How far do we extend the rectangle beyond room boundary
+extend_bounds = 0; // How far do we extend the rectangle beyond room boundary
 
 surf = surface_create(room_width + extend_bounds * 2, room_height + extend_bounds * 2);
 

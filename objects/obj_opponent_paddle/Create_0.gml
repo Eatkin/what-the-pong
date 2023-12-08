@@ -7,6 +7,7 @@ enum EnemyProperties {
 	DoubleHeight,
 	DontBecomeStupider,
 	HardToSee,
+	HorizontalMovement,
 	Max
 }
 
@@ -60,6 +61,8 @@ grav = 0.5;
 grounded = true;
 
 maxspeed = 10;
+x_accel_timer = 0;
+x_accel_step = 0.04;
 y_accel_timer = 0;
 y_accel_step = 0.04;
 
@@ -67,8 +70,14 @@ y_accel_step = 0.04;
 y_fuzz = 32;		// The AI's ability to detect the ball's y position
 x_fuzz = 32;		// The AI's ability to detect the ball's x position
 // Where the AI thinks the ball is
-x_pred = obj_ball.x + 2 * irandom(x_fuzz) - x_fuzz;
-y_pred = obj_ball.y + 2 * irandom(y_fuzz) - y_fuzz;
+if (instance_exists(obj_ball))	{
+	x_pred = obj_ball.x + 2 * irandom(x_fuzz) - x_fuzz;
+	y_pred = obj_ball.y + 2 * irandom(y_fuzz) - y_fuzz;
+}
+else	{
+	x_pred = room_width * 0.5;
+	y_pred = room_height * 0.5;
+}
 // How long the AI will wait before updating the ball's position
 lag_timer_max = 0.25 * room_speed;
 lag_timer = lag_timer_max;

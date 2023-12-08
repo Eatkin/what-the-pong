@@ -57,7 +57,7 @@ draw_rectangle(0, 0, room_width + extend_bounds * 2, room_height + extend_bounds
 
 // Render any objects that are required to be cut out from the surface
 gpu_set_blendmode(bm_subtract);
-var objs = [obj_ball, par_paddle, obj_ball_trail, obj_magnet, obj_breakout_block, obj_net];
+var objs = [obj_ball, par_paddle, obj_ball_trail, obj_magnet, obj_breakout_block, obj_net, obj_line, obj_cat];
 array_foreach(objs, render_obj);
 gpu_set_blendmode(bm_normal);
 

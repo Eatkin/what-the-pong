@@ -1,4 +1,4 @@
-if (!global.in_play)
+if (!global.in_play or scoreboard_style == ScoreboardStyle.None)
 	exit;
 	
 
