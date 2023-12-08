@@ -81,8 +81,17 @@ switch (room)	{
 		apply_property(BallProperties.DestroyOnWall);
 		break;
 	case rm_level17:
+	case rm_level20:
 		apply_property(BallProperties.NormalMovement);
 		apply_property(BallProperties.DestroyOnWall);
+		break;
+	case rm_level21:
+		apply_property(BallProperties.Multiplyer);
+		apply_property(BallProperties.NormalMovement);
+		apply_property(BallProperties.DestroyOnWall);
+		apply_property(BallProperties.Accelerate);
+		apply_property(BallProperties.Magnet);
+		acceleration_strength = 1.0001;
 		break;
 	default:
 		apply_property(BallProperties.NormalMovement);

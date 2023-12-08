@@ -17,8 +17,3 @@ Custom cursor
 
 Squash court:
 Since we're always on the right hand side this should be on the right hand side as well
-
-Cat level:
-Every so often the cat stops animateing, targets the ball and launches towards it
-It causes a rebound in the nearest angle or whatever and distrupts thing
-the ball will also bounce against it as expected

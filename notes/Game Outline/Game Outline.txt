@@ -1,12 +1,2 @@
-Portal 3
-Level 5 it's pong, but portals open and close meaning the ball teleports around
-N Pongism
-Level 14 a thing spins around and randomly shoots balls and you have to defend your goal like N Ballism
-Magnets 2 
-Level 15 it's pong, but the paddles are repellant magnets instead of paddles
-Cross the line
-Level 18 you have to move horizontally slowly to get across a vertical line so difficulty increases as you approach it
-Vertical
-Level 20 you're at the bottom of the screen and opponent is at the top
-Everything
-Level 21 a combination of loads of stuff - gravity, multiplyer, shrinkray, befuddler, breakout blocks
+Levels should be available on level select
+You unlock the everything level when you finish every other level

@@ -33,3 +33,5 @@ global.level_titles[? rm_level16] = "Hard to See";
 global.level_titles[? rm_level17] = "Tradeoff";
 global.level_titles[? rm_level18] = "Cross the Line";
 global.level_titles[? rm_level19] = "Cat";
+global.level_titles[? rm_level20] = "N. Pongism";
+global.level_titles[? rm_level21] = "Everything";
