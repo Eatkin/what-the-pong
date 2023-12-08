@@ -56,9 +56,12 @@ function hit_left()	{
 	
 	switch (room)	{			
 		case rm_level2:
-		case rm_level14:
-			opponent_score++;
-			snd = snd_opponent_score;
+		
+			create_text_particle(x_centre, y_centre, string(target_score - player_score));
+			player_score++;
+			player_score_scale = 2;
+			timer = 0.9;
+			snd = snd_score;
 			break;
 			
 		case rm_level11:
@@ -67,6 +70,11 @@ function hit_left()	{
 			snd = snd_score;
 			var xx = room_width * 0.75 + slime_x_offset + slime_spacing * (player_score - 1);
 			create_particle(xx, y_centre, spr_slimevolley_score, 1);
+			break;
+			
+		case rm_level14:
+			opponent_score++;
+			snd = snd_opponent_score;
 			break;
 			
 		case rm_level18:
@@ -92,11 +100,8 @@ function hit_right()	{
 	
 	switch (room)	{			
 		case rm_level2:
-			create_text_particle(x_centre, y_centre, string(target_score - player_score));
-			player_score++;
-			player_score_scale = 2;
-			timer = 0.9;
-			snd = snd_score;
+			opponent_score++;
+			snd = snd_opponent_score;
 			break;
 			
 		case rm_level11:

@@ -44,7 +44,7 @@ switch (room)	{
 		apply_property(BallProperties.NormalMovement);
 		var _dir = 10 + irandom(10);
 		_dir *= choose(1, -1)
-		xspeed = -dcos(_dir) * maxspeed;
+		xspeed = dcos(_dir) * maxspeed;
 		yspeed = dsin(_dir) * maxspeed;
 		break;
 	case rm_level3:
