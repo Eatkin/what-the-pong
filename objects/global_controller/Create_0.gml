@@ -10,7 +10,7 @@ screenHeight = 540;
 global.in_play = false;
 
 if (room == Room1)
-	room_goto(rm_level1);
+	room_goto(rm_menu);
 	
 // Global data structures
 global.level_titles = ds_map_create();

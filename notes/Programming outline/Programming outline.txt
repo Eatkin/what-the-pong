@@ -1,19 +1,24 @@
-End level transition:
-Doesn't really make sensee for if you lose the level so we should have a sepaarate transition for if we lost a level
-Like the paddles explodes or something
-
-
-Make some level aliases so I can order them later on or something idk
-Can use a grid or 2d array
-
-Particles n shit:
-	Upon loss the player paddle explodes
-
 Menu screen:
 	Numbered levels like in a flash game
 	Little icon when you hover over to show what the level looks like plus level title
 	
 Custom cursor
 
-Squash court:
-Since we're always on the right hand side this should be on the right hand side as well
+Menu:
+	What the Pong title
+	Little screen that displays the level title when you hover over a button
+	21 buttons lerp in 4x5 with one extra at the bottom 
+	Some hover and click effects idk
+	Just display everything for now and make it look good later
+	Every level completed gets a star
+	Last level gets a padlock
+	Got an inky background for blendmode fun
+	
+End level:
+	Pull up a box that says level complete! and then asks if you want to continue, replay or go to menu
+	
+On levels:
+	A button to exit to menu
+	
+Save data:
+	Yeah just save level completion data I guess

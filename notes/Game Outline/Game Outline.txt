@@ -1,2 +1,0 @@
-Levels should be available on level select
-You unlock the everything level when you finish every other level
