@@ -36,3 +36,18 @@ global.level_titles[? rm_level18] = "Cross the Line";
 global.level_titles[? rm_level19] = "Cat";
 global.level_titles[? rm_level20] = "N. Pongism";
 global.level_titles[? rm_level21] = "Everything";
+
+// Bitmasks
+global.completion_status = 0;
+
+// Set up save data
+if (!file_exists("save"))	{
+	var file = file_text_open_write("save");
+	file_text_write_real(file, 0);
+	file_text_close(file);
+}
+
+// Read the completion status
+var file = file_text_open_read("save")
+global.completion_status = file_text_read_real(file);
+file_text_close(file);

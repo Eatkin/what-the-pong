@@ -32,7 +32,13 @@ if (timer >= 1)	{
 	alpha += timer_step;
 	if (alpha >= 1)	{
 		if (win)	{
-			room_goto_next();
+			// Update the level completion data
+			global.completion_status |= 1 << real(string_replace(room_get_name(room), "rm_level", ""));
+			// Update the save file
+			var file = file_text_open_write("save");
+			file_text_write_real(file, global.completion_status);
+			file_text_close(file);
+			room_goto(rm_menu);
 		}
 		else	{
 			room_restart();

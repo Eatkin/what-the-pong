@@ -33,8 +33,13 @@ draw_set_font(fnt_press_start);
 draw_set_colour(c_white);
 for (var i = 0; i < num_buttons; i++)	{
 	var _inst = instance_find(obj_menu_button, i);
-	with (_inst)
+	with (_inst)	{
 		draw_text_transformed(x, y, level_num, zoom, zoom, angle);
+		if (completion_status == 1)
+			draw_sprite_ext(spr_menu_stars, 0, x, y, zoom, zoom, angle, c_white, 1);
+		if (locked)
+			draw_sprite_ext(spr_menu_locked, 0, x, y, zoom, zoom, angle, c_white, 1);
+	}
 }
 scr_reset_text_alignment();
 

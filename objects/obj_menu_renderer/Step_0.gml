@@ -1,2 +1,2 @@
 offset += 0.2;
-offset %= 250;
+offset %= 400;

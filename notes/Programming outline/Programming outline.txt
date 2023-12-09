@@ -1,19 +1,10 @@
-Menu screen:
-	Numbered levels like in a flash game
-	Little icon when you hover over to show what the level looks like plus level title
-	
 Custom cursor
 
 Menu:
-	Every level completed gets a star
-	Last level gets a padlock
 	Sound
-	
-End level:
-	Pull up a box that says level complete! and then asks if you want to continue, replay or go to menu
 	
 On levels:
 	A button to exit to menu
-	
-Save data:
-	Yeah just save level completion data I guess
+
+Make sure we can't click locked levels
+(little animation to shake side to side)
