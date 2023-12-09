@@ -41,7 +41,12 @@ if (timer >= 1)	{
 			room_goto(rm_menu);
 		}
 		else	{
-			room_restart();
+			if (exit_to_menu)	{
+				room_goto(rm_menu);
+			}
+			else	{
+				room_restart();
+			}
 		}
 	}
 }

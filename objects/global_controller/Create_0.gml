@@ -51,3 +51,5 @@ if (!file_exists("save"))	{
 var file = file_text_open_read("save")
 global.completion_status = file_text_read_real(file);
 file_text_close(file);
+
+cursor_sprite = cr_none;

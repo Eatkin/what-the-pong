@@ -180,3 +180,6 @@ slime_x_offset = -slime_spacing * 2;
 // This is for survival levels
 countdown_timer = 10;
 countdown_ticks = room_speed;
+
+// Make the exit level button
+instance_create_layer(0, 0, layer, obj_end_level_button);

@@ -10,3 +10,5 @@ zoom = 1;
 alpha = 0;
 
 target_room = rm_menu;
+
+audio_play_sound(snd_zip, 0, false);

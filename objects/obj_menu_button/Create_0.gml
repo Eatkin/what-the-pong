@@ -14,11 +14,14 @@ max_angle = -8;
 zoom = 1;
 max_zoom = 1.5;
 
-timer = [0, 0];
-timer_step = [1 / room_speed, 2 / room_speed];
+timer = [0, 0, 0];
+timer_step = [1 / room_speed, 2 / room_speed, 3 / room_speed];
 
 active = false;
 
 ticker = noone;
 
 clicked = false;
+
+override_angle = false;
+overridden_angle = 0;

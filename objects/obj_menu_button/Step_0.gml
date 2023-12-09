@@ -4,10 +4,22 @@ if (active)	{
 		if (ticker == noone)	{
 			ticker = instance_create_layer(0, 0, layer, obj_level_ticker);
 			ticker.text = level_name;
+			var pitch = 0.95 + random(0.1);
+			audio_play_sound(snd_menu_select, 0, false, 1, 0, pitch);
 		}
 		
-		if (mouse_check_button_released(mb_left))	{
-			clicked = true;
+		if (mouse_check_button_released(mb_left) and !override_angle)	{
+			if (locked)	{
+				override_angle = true;
+				timer[2] = 0;
+				var pitch = 0.95 + random(0.1);
+				audio_play_sound(snd_menu_no, 0, false, 1, 0, pitch);
+			}
+			else	{
+				clicked = true;
+				var pitch = 0.95 + random(0.1);
+				audio_play_sound(snd_score, 0, false, 1, 0, pitch);
+			}
 		}
 	}
 	else	{
@@ -43,3 +55,11 @@ timer[1] = clamp(timer[1], 0, 1);
 image_angle = angle;
 image_xscale = zoom;
 image_yscale = zoom;
+
+if (override_angle)	{
+	overridden_angle = -8 * dcos(timer[2] * 360);
+	angle = overridden_angle;
+	timer[2] += timer_step[2];
+	if (timer[2] >= 1)
+		override_angle = false;
+}

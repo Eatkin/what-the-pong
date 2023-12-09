@@ -14,3 +14,5 @@ cam = view_camera[0];
 alpha = 0;
 
 global.in_play = false;
+
+exit_to_menu = false;
