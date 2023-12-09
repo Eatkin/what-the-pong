@@ -6,22 +6,26 @@ var lvl_last = 21;
 // Co-ordinates
 var items_per_column = 5;
 var columns = 4;
-var v_spacing = 16;
+var v_spacing = 20;
 var h_spacing = 32;
 var width = sprite_get_width(spr_menuButton) * 4 + 3 * h_spacing;
 var top = room_height * 0.9 - 6 * sprite_get_height(spr_menuButton) - v_spacing * items_per_column;
 var left = 0.5 * (room_width - width + sprite_get_width(spr_menuButton));
+var delay_multiplyer = 2;
 
 // Loop through each level
 for (var i = lvl_first; i < lvl_last; i++)	{
 	level_index = asset_get_index("rm_level" + string(i));
+	var i_div = (i - lvl_first) div items_per_column;
+	var i_mod = (i - lvl_first) % items_per_column;
 	var vars = {
+		delay: (i_div + i_mod) * delay_multiplyer,
 		level_num: string(i),
 		level_id: level_index,
 		level_name: global.level_titles[? level_index],
 	};
-	var xx = left + (h_spacing + sprite_get_width(spr_menuButton)) * ((i - lvl_first) div items_per_column);
-	var yy = top + (v_spacing + sprite_get_height(spr_menuButton)) * ((i - lvl_first) % items_per_column);
+	var xx = left + (h_spacing + sprite_get_width(spr_menuButton)) * i_div;
+	var yy = top + (v_spacing + sprite_get_height(spr_menuButton)) * i_mod;
 	
 	
 	instance_create_layer(xx, yy, layer, obj_menu_button, vars);
@@ -31,6 +35,7 @@ for (var i = lvl_first; i < lvl_last; i++)	{
 var xx = room_width * 0.5;
 var yy = top + (v_spacing + sprite_get_height(spr_menuButton)) * 5;
 var vars = {
+	delay: 9 * delay_multiplyer,
 	level_num: "21",
 	level_id: rm_level21,
 	level_name: global.level_titles[? rm_level21],

@@ -17,6 +17,12 @@ for (var i = 0; i < num_buttons; i++)	{
 		draw_sprite_ext(sprite_index, image_index, x, y, zoom, zoom, angle, c_white, 1);
 }
 
+// Also draw any menu transitions if they exist
+if (instance_exists(obj_menu_transition))	{
+	with (obj_menu_transition)
+		draw_sprite_ext(sprite_index, image_index, x, y, zoom, zoom, 0, c_white, 1);
+}
+
 gpu_set_blendmode(bm_normal);
 
 // Now we draw the button text over the top

@@ -5,6 +5,8 @@ max_angle = 10;
 rot_counter = 0;
 rot_rate = 2;
 
+scale = 1;
+
 global.in_play = false;
 
 yoffset = room_height * (0.5 + random(0.5));

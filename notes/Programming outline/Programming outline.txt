@@ -5,14 +5,9 @@ Menu screen:
 Custom cursor
 
 Menu:
-	What the Pong title
-	Little screen that displays the level title when you hover over a button
-	21 buttons lerp in 4x5 with one extra at the bottom 
-	Some hover and click effects idk
-	Just display everything for now and make it look good later
 	Every level completed gets a star
 	Last level gets a padlock
-	Got an inky background for blendmode fun
+	Sound
 	
 End level:
 	Pull up a box that says level complete! and then asks if you want to continue, replay or go to menu
